@@ -17,7 +17,7 @@
   });
   navLinks.forEach((link) => link.addEventListener("click", closeMenu));
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 980) closeMenu();
+    if (window.innerWidth > 1180) closeMenu();
   });
 
   /* ---------- Home page: highlight "Catch Up" when its section is targeted ---------- */
