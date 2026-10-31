@@ -48,6 +48,7 @@
     { title: "The Lunar Expedition", hint: "Adventures", href: "adventures.html" },
     { title: "The Camping Adventure", hint: "Adventures", href: "adventures.html" },
     { title: "Early Adventures", hint: "Adventures", href: "adventures.html" },
+    { title: "Remastered", hint: "Catch Up · YouTube playlist", href: "https://www.youtube.com/playlist?list=PLMj7z8zenfUA" },
     { title: "Shorts & Extras", hint: "Adventures", href: "adventures.html" },
     { title: "Meet the Crew", hint: "Explore", href: "meet-the-crew.html" },
     { title: "Buddy", hint: "The Enthusiast · Meet the Crew", href: "meet-the-crew.html" },
