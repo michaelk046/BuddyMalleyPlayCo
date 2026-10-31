@@ -62,7 +62,7 @@
     { title: "Rocket Cradle", hint: "Our World", href: "our-world.html" },
     { title: "Spacesuit", hint: "Our World", href: "our-world.html" },
     { title: "Space Helmet", hint: "Our World", href: "our-world.html" },
-    { title: "Transport Ring", hint: "Our World", href: "our-world.html" },
+    { title: "Transport Ring", hint: "Our World · moon samples", href: "our-world.html" },
     { title: "Comforts of Home", hint: "Our World", href: "our-world.html" },
     { title: "Buddy's Red Ball", hint: "Our World", href: "our-world.html" },
     { title: "Bed", hint: "Our World · Comforts of Home", href: "our-world.html" },
