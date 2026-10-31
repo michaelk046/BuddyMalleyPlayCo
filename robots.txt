@@ -4,4 +4,4 @@ Disallow: /behind-the-scenes.html
 Disallow: /toys-and-equipment.html
 Disallow: /google396a0212ed91db62.html
 
-Sitemap: https://www.buddymalleyplayco.com/sitemap.xml
+Sitemap: https://buddymalleyplayco.com/sitemap.xml
