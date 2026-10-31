@@ -198,7 +198,8 @@ h1, h2, h3, .nav-links a, .btn, .shot-label, .legal button {
   padding: 20px 4px 10px;
 }
 .shot {
-  width: 30%;
+  width: 38%;
+  max-width: 280px;
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -206,9 +207,8 @@ h1, h2, h3, .nav-links a, .btn, .shot-label, .legal button {
   transform-origin: center bottom;
   transition: transform 0.25s ease;
 }
-.shot:nth-child(1) { transform: rotate(-4deg); }
-.shot:nth-child(2) { transform: translateY(-10px); z-index: 1; }
-.shot:nth-child(3) { transform: rotate(4deg); }
+.shot:nth-child(1) { transform: rotate(-3deg); }
+.shot:nth-child(2) { transform: rotate(3deg); }
 .shot:hover, .shot:focus-visible {
   transform: translateY(-14px) rotate(0deg) scale(1.04);
   z-index: 2;
@@ -970,7 +970,7 @@ dialog::backdrop { background: rgba(5, 14, 28, 0.66); }
     grid-template-columns: 1fr;
     justify-items: center;
   }
-  .shot, .shot:nth-child(1), .shot:nth-child(2), .shot:nth-child(3) {
+  .shot, .shot:nth-child(1), .shot:nth-child(2) {
     width: min(100%, 360px);
     transform: none;
   }
