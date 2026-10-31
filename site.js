@@ -46,7 +46,6 @@
     { title: "Latest Episode", hint: "Episode 16 · Moon Capsule Recovery", href: "index.html#latest" },
     { title: "Adventures", hint: "Explore", href: "adventures.html" },
     { title: "Lunar Expedition", hint: "Adventures", href: "adventures.html" },
-    { title: "Camping Adventure", hint: "Adventures", href: "adventures.html" },
     { title: "Buddy & Malley Remastered", hint: "Adventures", href: "adventures.html" },
     { title: "Remastered", hint: "Catch Up · YouTube playlist", href: "https://www.youtube.com/playlist?list=PLMj7z8zenfUA" },
     { title: "Lessons & Extras", hint: "Adventures", href: "adventures.html" },
@@ -179,8 +178,8 @@
 
   function bindPicker(panel, keys) {
     if (!panel) return;
-    const tabs = [...panel.querySelectorAll(".crew-tab")];
-    const cards = [...panel.querySelectorAll(".chapter[data-" + keys.card + "]")];
+    const tabs = [...panel.querySelectorAll(".crew-tab")].filter((tab) => !tab.hidden);
+    const cards = [...panel.querySelectorAll(".chapter[data-" + keys.card + "]")].filter((card) => !card.hidden);
     const bar = panel.querySelector(".crew-tabs");
 
     function setPick(name, options) {
