@@ -851,12 +851,13 @@ dialog {
   border: 0;
   border-radius: 20px;
   padding: 0;
-  width: min(480px, calc(100% - 32px));
+  width: min(560px, calc(100% - 32px));
+  max-height: min(80vh, 720px);
   color: var(--ink);
   box-shadow: var(--shadow);
 }
 dialog::backdrop { background: rgba(5, 14, 28, 0.66); }
-.dialog-card { padding: 22px; }
+.dialog-card { padding: 22px; overflow-y: auto; max-height: min(80vh, 720px); }
 .dialog-head {
   display: flex;
   align-items: center;
