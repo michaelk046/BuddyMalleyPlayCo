@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Adventures | Buddy &amp; Malley Play Co.</title>
-  <meta name="description" content="Follow Buddy &amp; Malley from backyard stories to the Lunar Expedition, the upcoming Camping Adventure, shorts and extras.">
+  <meta name="description" content="Follow Buddy and Malley through the Lunar Expedition, Camping Adventure, Remastered stories, and Lessons &amp; Extras.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#061628">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="https://buddymalleyplayco.com/sitemap.xml">
@@ -18,7 +18,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Buddy &amp; Malley Play Co.">
   <meta property="og:title" content="Adventures | Buddy &amp; Malley Play Co.">
-  <meta property="og:description" content="Follow Buddy &amp; Malley from backyard stories to the Lunar Expedition, the upcoming Camping Adventure, shorts and extras.">
+  <meta property="og:description" content="Follow Buddy and Malley through the Lunar Expedition, Camping Adventure, Remastered stories, and Lessons &amp; Extras.">
   <meta property="og:url" content="https://buddymalleyplayco.com/adventures.html">
   <meta property="og:image" content="https://buddymalleyplayco.com/Images/og-image.jpg">
   <meta property="og:image:width" content="1200">
@@ -27,7 +27,7 @@
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Adventures | Buddy &amp; Malley Play Co.">
-  <meta name="twitter:description" content="Follow Buddy &amp; Malley from backyard stories to the Lunar Expedition, the upcoming Camping Adventure, shorts and extras.">
+  <meta name="twitter:description" content="Follow Buddy and Malley through the Lunar Expedition, Camping Adventure, Remastered stories, and Lessons &amp; Extras.">
   <meta name="twitter:image" content="https://buddymalleyplayco.com/Images/og-image.jpg">
   <meta name="twitter:image:alt" content="Buddy and Malley, two Australian Shepherds, camping by a lake at sunset">
   <script type="application/ld+json">
@@ -56,7 +56,7 @@
         "@id": "https://buddymalleyplayco.com/adventures.html#webpage",
         "url": "https://buddymalleyplayco.com/adventures.html",
         "name": "Adventures | Buddy & Malley Play Co.",
-        "description": "Follow Buddy & Malley from backyard stories to the Lunar Expedition, the upcoming Camping Adventure, shorts and extras.",
+        "description": "Follow Buddy and Malley through the Lunar Expedition, Camping Adventure, Remastered stories, and Lessons & Extras.",
         "isPartOf": { "@id": "https://buddymalleyplayco.com/#website" },
         "about": { "@id": "https://buddymalleyplayco.com/#organization" },
         "inLanguage": "en"
@@ -113,83 +113,110 @@
     <section class="details page-details" id="details">
       <div class="wrap">
       <a class="back-link" href="index.html#explore-world"><span aria-hidden="true">&larr;</span> Back to Home</a>
-      <article class="details-panel" id="details-adventures" aria-labelledby="details-title">
+      <article class="details-panel" id="details-adventures" data-active="lunar" aria-labelledby="details-title">
                 <header class="details-intro">
-                  <h1 id="details-title">Every adventure starts with a wag</h1>
-                  <p>From backyard discoveries to journeys all the way to the Moon, Buddy and Malley are always ready to see what's around the next corner.</p>
-                  <p>Explore their adventures below, discover the story behind each journey, and follow along from beginning to end.</p>
+                  <h1 id="details-title">Adventures</h1>
+                  <p class="chapter-tag">Every Buddy &amp; Malley adventure starts with curiosity — and usually ends somewhere they never expected.</p>
+                  <p>Follow Buddy and Malley as they explore new places, tackle new challenges, and turn ordinary days into extraordinary adventures.</p>
+                  <p>Buddy brings the enthusiasm. Malley brings the plan.</p>
+                  <p>Together, they're always ready for whatever comes next.</p>
                 </header>
 
-                <div class="chapter tone-blue tl tl-now">
+                <nav class="crew-tabs" role="tablist" aria-label="Choose an adventure">
+                  <button class="crew-tab" type="button" role="tab" id="tab-lunar" data-adv-tab="lunar" aria-controls="adv-lunar" aria-selected="true">
+                    <img src="Images/Section1/Moon_Mission.webp" alt="" width="64" height="64" aria-hidden="true">
+                    <span>Lunar</span>
+                  </button>
+                  <button class="crew-tab" type="button" role="tab" id="tab-camp" data-adv-tab="camp" aria-controls="adv-camp" aria-selected="false" tabindex="-1">
+                    <img loading="lazy" decoding="async" src="Images/Backgrounds/Explore.webp" alt="" width="64" height="64" aria-hidden="true">
+                    <span>Camping</span>
+                  </button>
+                  <button class="crew-tab" type="button" role="tab" id="tab-remaster" data-adv-tab="remaster" aria-controls="adv-remaster" aria-selected="false" tabindex="-1">
+                    <img loading="lazy" decoding="async" src="Images/Section1/Remastered.webp" alt="" width="64" height="64" aria-hidden="true">
+                    <span>Remastered</span>
+                  </button>
+                  <button class="crew-tab" type="button" role="tab" id="tab-lessons" data-adv-tab="lessons" aria-controls="adv-lessons" aria-selected="false" tabindex="-1">
+                    <img loading="lazy" decoding="async" src="Images/Section1/Extras_Shorts.webp" alt="" width="64" height="64" aria-hidden="true">
+                    <span>Lessons</span>
+                  </button>
+                </nav>
+
+                <div class="chapter tone-blue is-active" id="adv-lunar" data-adv="lunar" role="tabpanel" aria-labelledby="tab-lunar">
                   <figure class="chapter-art">
                     <img src="Images/Section1/Moon_Mission.webp" width="1254" height="1254" alt="Buddy and Malley in spacesuits inside the spacecraft, with Earth outside the window.">
                   </figure>
                   <div class="chapter-body">
-                    <h3>The Lunar Expedition</h3>
-                    <p class="chapter-tag">One small step for Aussies. One very big adventure.</p>
-                    <p>What starts as another Buddy and Malley idea quickly becomes their biggest adventure yet — a journey from Earth all the way to the Moon.</p>
-                    <p>From preparing for launch and traveling through space to exploring the lunar surface, Buddy and Malley discover that getting to the Moon is only half the adventure.</p>
-                    <p class="chapter-line">And eventually, they still have to find their way home.</p>
-                    <p class="chapter-status">Adventure in Progress</p>
+                    <h3>Lunar Expedition</h3>
+                    <p class="chapter-tag">Their first big adventure.</p>
+                    <p>What starts with a mysterious letter becomes Buddy and Malley's biggest adventure yet — a mission to the Moon.</p>
+                    <p>From preparing for launch and traveling through space to exploring the lunar surface and making the long journey home, the Lunar Expedition follows Buddy and Malley beyond Earth for the very first time.</p>
                     <div>
-                      <a class="btn yt" href="https://www.youtube.com/results?search_query=Buddy+and+Malley+Lunar+Expedition" target="_blank" rel="noopener noreferrer">Watch the Lunar Expedition →</a>
+                      <a class="btn yt" href="https://www.youtube.com/watch?v=jLgqcRXCZCQ&amp;list=PLEeQvXE-bIC8" target="_blank" rel="noopener noreferrer">Watch the complete Lunar Expedition</a>
                     </div>
+                    <p class="crew-next"><button type="button" data-adv-next="camp">Camping Adventure <span aria-hidden="true">→</span></button></p>
                   </div>
                 </div>
 
-                <div class="chapter camp flip tone-green tl tl-next">
+                <div class="chapter camp flip tone-green" id="adv-camp" data-adv="camp" role="tabpanel" aria-labelledby="tab-camp">
                   <figure class="chapter-art">
                     <div class="crop">
                       <img loading="lazy" decoding="async" src="Images/Backgrounds/Explore.webp" width="2140" height="735" alt="Buddy and Malley beside the campfire with their camping mugs.">
                     </div>
                   </figure>
                   <div class="chapter-body">
-                    <p class="chapter-kicker">Coming Adventure</p>
-                    <h3>The Camping Adventure</h3>
-                    <p>Buddy and Malley are trading rockets and spacesuits for tents, trails, and a night under the stars.</p>
-                    <p>Their newest adventure takes them into the great outdoors, where a simple camping trip is sure to turn into something only Buddy and Malley could experience.</p>
+                    <h3>Camping Adventure</h3>
+                    <p class="chapter-tag">The next adventure begins.</p>
+                    <p>Buddy and Malley are heading into the great outdoors.</p>
+                    <p>A quiet camping trip sounds simple enough — but with these two, even a weekend in the woods can become an adventure.</p>
+                    <p>New places. New discoveries. And probably a few things that weren't part of Malley's plan.</p>
                     <div>
-                      <button class="btn yt" type="button" disabled>Coming Soon</button>
+                      <a class="btn yt" href="https://www.youtube.com/@BuddyMalleyPlayCo" target="_blank" rel="noopener noreferrer">Follow the Camping Adventure</a>
                     </div>
+                    <p class="crew-next"><button type="button" data-adv-next="remaster">Buddy &amp; Malley Remastered <span aria-hidden="true">→</span></button></p>
                   </div>
                 </div>
 
-                <div class="chapter tone-orange tl tl-past">
+                <div class="chapter tone-purple" id="adv-remaster" data-adv="remaster" role="tabpanel" aria-labelledby="tab-remaster">
                   <figure class="chapter-art">
-                    <img loading="lazy" decoding="async" src="Images/Section1/Early_Adventures.webp" width="1254" height="1254" alt="Buddy and Malley running down a sunny forest path.">
+                    <img loading="lazy" decoding="async" src="Images/Section1/Remastered.webp" width="1254" height="1254" alt="Buddy and Malley in spacesuits. Buddy and Malley Remastered: the adventures you know, reimagined.">
                   </figure>
                   <div class="chapter-body">
-                    <h3>Early Adventures</h3>
-                    <p class="chapter-tag">Where it all began</p>
-                    <p>Before the Moon. Before the big expeditions. Before Buddy and Malley knew just how far their adventures would take them.</p>
-                    <p>These are the stories where Buddy &amp; Malley Play Co. began — full of curiosity, questionable plans, unexpected discoveries, and two Australian Shepherds who can turn an ordinary day into an adventure.</p>
-                    <p>They may look a little different from the Buddy and Malley you know today, but they're an important part of their story.</p>
+                    <h3>Buddy &amp; Malley Remastered</h3>
+                    <p class="chapter-tag">The adventures you know. Reimagined.</p>
+                    <p>Return to Buddy and Malley's original adventures — rebuilt with updated character designs, improved animation, enhanced sound, tighter editing, and refined storytelling.</p>
+                    <p>The original stories aren't disappearing.</p>
+                    <p>Remastered gives us the chance to revisit those adventures and bring them closer to the Buddy &amp; Malley world we always imagined.</p>
                     <div>
-                      <a class="btn yt" href="https://www.youtube.com/results?search_query=Buddy+and+Malley+Early+Adventures" target="_blank" rel="noopener noreferrer">Watch the Early Adventures →</a>
+                      <a class="btn yt" href="https://www.youtube.com/playlist?list=PLMj7z8zenfUA" target="_blank" rel="noopener noreferrer">Watch Buddy &amp; Malley Remastered</a>
                     </div>
+                    <p class="crew-next"><button type="button" data-adv-next="lessons">Lessons &amp; Extras <span aria-hidden="true">→</span></button></p>
                   </div>
                 </div>
 
-                <div class="chapter flip tone-purple tl-bonus">
+                <div class="chapter flip tone-orange" id="adv-lessons" data-adv="lessons" role="tabpanel" aria-labelledby="tab-lessons">
                   <figure class="chapter-art">
                     <img loading="lazy" decoding="async" src="Images/Section1/Extras_Shorts.webp" width="1254" height="1254" alt="Buddy and Malley on the grass with a clapperboard, popcorn, and a movie camera under the stars.">
                   </figure>
                   <div class="chapter-body">
-                    <h3>Shorts &amp; Extras</h3>
-                    <p class="chapter-tag">More Buddy. More Malley. More fun.</p>
-                    <p>Not every adventure needs to be a big expedition.</p>
-                    <p>Shorts &amp; Extras is home to smaller Buddy and Malley moments, mini-adventures, special videos, behind-the-scenes fun, and stories that don't quite fit anywhere else.</p>
-                    <p>It's also where you'll find Buddy &amp; Malley Remastered — updated versions of some of their earliest adventures, recreated using everything we've learned along the way.</p>
+                    <h3>Lessons &amp; Extras</h3>
+                    <p class="chapter-tag">There's more to their world than the big adventures.</p>
+                    <p>Not every Buddy &amp; Malley story needs a rocket, a Moon mission, or a camping trip.</p>
+                    <p>Lessons &amp; Extras is home to fun lessons, standalone stories, funny moments, special videos, and the occasional bit of Buddy &amp; Malley chaos that doesn't belong to a larger adventure.</p>
                     <div>
-                      <a class="btn yt" href="https://www.youtube.com/results?search_query=Buddy+and+Malley+Shorts" target="_blank" rel="noopener noreferrer">Watch Shorts &amp; Extras →</a>
+                      <a class="btn yt" href="https://www.youtube.com/watch?v=2ov-cvUPiAk&amp;list=PLDJLloAznSp8" target="_blank" rel="noopener noreferrer">Explore Lessons &amp; Extras</a>
                     </div>
+                    <p class="crew-next"><button type="button" data-adv-next="lunar">Lunar Expedition <span aria-hidden="true">→</span></button></p>
                   </div>
                 </div>
 
                 <div class="chapter closing">
                   <div class="chapter-body">
-                    <h3>The adventure keeps going</h3>
-                    <p>New episodes, shorts, and surprises from Buddy and Malley are always on the way. Follow along so you never miss a wag.</p>
+                    <h3>The Adventure Continues</h3>
+                    <p>The Lunar Expedition was only the beginning.</p>
+                    <p>New adventures, new places, and new stories are already ahead for Buddy and Malley.</p>
+                    <p>Where will they go next?</p>
+                    <p>With Buddy's enthusiasm and Malley's planning, probably somewhere interesting.</p>
+                    <p class="chapter-tag">Adventures are better together.</p>
                     <div>
                       <a class="btn gold" href="https://www.youtube.com/@BuddyMalleyPlayCo" target="_blank" rel="noopener noreferrer">Follow on YouTube →</a>
                     </div>

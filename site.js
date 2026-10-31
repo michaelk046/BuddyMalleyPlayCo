@@ -45,11 +45,11 @@
     { title: "Catch Up", hint: "Explore Adventures", href: "index.html#catch-up" },
     { title: "Latest Episode", hint: "Episode 16 · Moon Capsule Recovery", href: "index.html#latest" },
     { title: "Adventures", hint: "Explore", href: "adventures.html" },
-    { title: "The Lunar Expedition", hint: "Adventures", href: "adventures.html" },
-    { title: "The Camping Adventure", hint: "Adventures", href: "adventures.html" },
-    { title: "Early Adventures", hint: "Adventures", href: "adventures.html" },
+    { title: "Lunar Expedition", hint: "Adventures", href: "adventures.html" },
+    { title: "Camping Adventure", hint: "Adventures", href: "adventures.html" },
+    { title: "Buddy & Malley Remastered", hint: "Adventures", href: "adventures.html" },
     { title: "Remastered", hint: "Catch Up · YouTube playlist", href: "https://www.youtube.com/playlist?list=PLMj7z8zenfUA" },
-    { title: "Shorts & Extras", hint: "Adventures", href: "adventures.html" },
+    { title: "Lessons & Extras", hint: "Adventures", href: "adventures.html" },
     { title: "Lessons and Extras", hint: "Catch Up · YouTube playlist", href: "https://www.youtube.com/watch?v=2ov-cvUPiAk&list=PLDJLloAznSp8" },
     { title: "Meet the Crew", hint: "Explore", href: "meet-the-crew.html" },
     { title: "Buddy", hint: "The Enthusiast · Meet the Crew", href: "meet-the-crew.html" },
@@ -174,29 +174,30 @@
     markSignedUp();
   });
 
-  /* ---------- Meet the Crew: one character at a time ---------- */
-  const crewPanel = document.getElementById("details-meet");
-  if (crewPanel) {
-    const crewTabs = [...crewPanel.querySelectorAll(".crew-tab")];
-    const crewCards = [...crewPanel.querySelectorAll(".chapter[data-crew]")];
-    const crewBar = crewPanel.querySelector(".crew-tabs");
-    const phoneQuery = window.matchMedia("(max-width: 800px)");
+  /* ---------- One-at-a-time pickers (crew + adventures) ---------- */
+  const phoneQuery = window.matchMedia("(max-width: 800px)");
 
-    function setCrew(name, options) {
+  function bindPicker(panel, keys) {
+    if (!panel) return;
+    const tabs = [...panel.querySelectorAll(".crew-tab")];
+    const cards = [...panel.querySelectorAll(".chapter[data-" + keys.card + "]")];
+    const bar = panel.querySelector(".crew-tabs");
+
+    function setPick(name, options) {
       const opts = options || {};
-      crewTabs.forEach((tab) => {
-        const on = tab.dataset.crewTab === name;
+      tabs.forEach((tab) => {
+        const on = tab.dataset[keys.tab] === name;
         tab.setAttribute("aria-selected", String(on));
         tab.tabIndex = on ? 0 : -1;
         if (on && opts.focus) tab.focus();
       });
-      crewCards.forEach((card) => card.classList.toggle("is-active", card.dataset.crew === name));
-      crewPanel.dataset.active = name;
+      cards.forEach((card) => card.classList.toggle("is-active", card.dataset[keys.card] === name));
+      panel.dataset.active = name;
       if (opts.scroll && phoneQuery.matches) {
-        const card = crewCards.find((c) => c.dataset.crew === name);
+        const card = cards.find((c) => c.dataset[keys.card] === name);
         const header = document.querySelector(".site-header").offsetHeight;
         const top = card.getBoundingClientRect().top;
-        const limit = header + crewBar.offsetHeight;
+        const limit = header + bar.offsetHeight;
         if (top < limit) {
           const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
           window.scrollTo({ top: Math.max(0, top + window.scrollY - limit - 8), behavior: reduce ? "auto" : "smooth" });
@@ -204,24 +205,24 @@
       }
     }
 
-    crewPanel.querySelectorAll("[data-crew-next]").forEach((btn) => {
-      btn.addEventListener("click", () => setCrew(btn.dataset.crewNext, { scroll: true }));
+    panel.querySelectorAll("[data-" + keys.nextAttr + "]").forEach((btn) => {
+      btn.addEventListener("click", () => setPick(btn.dataset[keys.next], { scroll: true }));
     });
 
-    crewTabs.forEach((tab, index) => {
-      tab.addEventListener("click", () => setCrew(tab.dataset.crewTab, { scroll: true }));
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => setPick(tab.dataset[keys.tab], { scroll: true }));
       tab.addEventListener("keydown", (event) => {
         let next = -1;
-        if (event.key === "ArrowRight") next = (index + 1) % crewTabs.length;
-        else if (event.key === "ArrowLeft") next = (index - 1 + crewTabs.length) % crewTabs.length;
+        if (event.key === "ArrowRight") next = (index + 1) % tabs.length;
+        else if (event.key === "ArrowLeft") next = (index - 1 + tabs.length) % tabs.length;
         if (next < 0) return;
         event.preventDefault();
-        setCrew(crewTabs[next].dataset.crewTab, { focus: true });
+        setPick(tabs[next].dataset[keys.tab], { focus: true });
       });
     });
 
     let swipeStart = null;
-    crewCards.forEach((card) => {
+    cards.forEach((card) => {
       card.addEventListener("touchstart", (event) => {
         const t = event.touches[0];
         swipeStart = { x: t.clientX, y: t.clientY };
@@ -233,11 +234,14 @@
         const dy = t.clientY - swipeStart.y;
         swipeStart = null;
         if (Math.abs(dx) < 70 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
-        const current = crewCards.findIndex((c) => c.classList.contains("is-active"));
+        const current = cards.findIndex((c) => c.classList.contains("is-active"));
         const next = dx < 0 ? current + 1 : current - 1;
-        if (next < 0 || next >= crewCards.length) return;
-        setCrew(crewCards[next].dataset.crew, { scroll: true });
+        if (next < 0 || next >= cards.length) return;
+        setPick(cards[next].dataset[keys.card], { scroll: true });
       }, { passive: true });
     });
   }
+
+  bindPicker(document.getElementById("details-meet"), { tab: "crewTab", card: "crew", next: "crewNext", nextAttr: "crew-next" });
+  bindPicker(document.getElementById("details-adventures"), { tab: "advTab", card: "adv", next: "advNext", nextAttr: "adv-next" });
 })();

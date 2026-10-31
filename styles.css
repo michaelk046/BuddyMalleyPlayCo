@@ -596,11 +596,23 @@ h1, h2, h3, .nav-links a, .btn, .shot-label, .legal button {
   transform: scale(1.08);
   box-shadow: 0 0 0 4px var(--c), 0 10px 20px rgba(16, 32, 64, 0.22);
 }
-.chapter[data-crew]:not(.is-active) { display: none; }
+.chapter[data-crew]:not(.is-active),
+.chapter[data-adv]:not(.is-active) { display: none; }
 #details-meet { transition: background 0.3s ease; }
 #details-meet[data-active="buddy"] { background: #fbe7cf; }
 #details-meet[data-active="malley"] { background: #d9e6fb; }
 #details-meet[data-active="oscar"] { background: #e1e3ea; }
+#details-adventures[data-active="lunar"] { background: #d9e6fb; }
+#details-adventures[data-active="camp"] { background: #e5f3d9; }
+#details-adventures[data-active="remaster"] { background: #ece4fb; }
+#details-adventures[data-active="lessons"] { background: #fbe7cf; }
+#details-adventures .crew-tabs { gap: 28px; flex-wrap: wrap; }
+#details-adventures .crew-tab { min-width: 88px; }
+#details-adventures .crew-tab img { width: 96px; height: 96px; }
+#details-adventures .crew-tab[data-adv-tab="lunar"] { --c: #3f74d6; }
+#details-adventures .crew-tab[data-adv-tab="camp"] { --c: #3f9a1a; }
+#details-adventures .crew-tab[data-adv-tab="remaster"] { --c: #6a3fc0; }
+#details-adventures .crew-tab[data-adv-tab="lessons"] { --c: #d9822b; }
 .crew-next {
   margin: 22px 0 0;
 }
@@ -1060,7 +1072,11 @@ dialog::backdrop { background: rgba(5, 14, 28, 0.66); }
     transform: scale(1.12);
     box-shadow: 0 0 0 3px var(--c), 0 6px 14px rgba(16, 32, 64, 0.28);
   }
-  .chapter[data-crew] { margin-top: 10px; }
+  .chapter[data-crew],
+  .chapter[data-adv] { margin-top: 10px; }
+  #details-adventures .crew-tabs { gap: 8px; }
+  #details-adventures .crew-tab { min-width: 68px; }
+  #details-adventures .crew-tab img { width: 56px; height: 56px; }
   .crew-next { display: none; }
 
   /* Phones: Adventures chapters hang off a vertical timeline */
@@ -1110,7 +1126,8 @@ dialog::backdrop { background: rgba(5, 14, 28, 0.66); }
   }
 }
 @media (max-width: 800px) and (prefers-reduced-motion: no-preference) {
-  .chapter[data-crew].is-active { animation: crew-in 0.3s ease; }
+  .chapter[data-crew].is-active,
+  .chapter[data-adv].is-active { animation: crew-in 0.3s ease; }
   @keyframes crew-in {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: none; }
