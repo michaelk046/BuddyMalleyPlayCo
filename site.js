@@ -172,7 +172,7 @@
     markSignedUp();
   });
 
-  /* ---------- Meet the Crew: one character at a time on phones ---------- */
+  /* ---------- Meet the Crew: one character at a time ---------- */
   const crewPanel = document.getElementById("details-meet");
   if (crewPanel) {
     const crewTabs = [...crewPanel.querySelectorAll(".crew-tab")];
@@ -201,6 +201,10 @@
         }
       }
     }
+
+    crewPanel.querySelectorAll("[data-crew-next]").forEach((btn) => {
+      btn.addEventListener("click", () => setCrew(btn.dataset.crewNext, { scroll: true }));
+    });
 
     crewTabs.forEach((tab, index) => {
       tab.addEventListener("click", () => setCrew(tab.dataset.crewTab, { scroll: true }));

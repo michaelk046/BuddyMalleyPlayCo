@@ -549,7 +549,74 @@ h1, h2, h3, .nav-links a, .btn, .shot-label, .legal button {
 .chapter.closing .chapter-tag { color: var(--gold) !important; margin: 18px 0 0 !important; }
 
 .chapter-art.portrait img { aspect-ratio: 4 / 5; object-position: 50% 22%; }
-.crew-tabs { display: none; }
+.crew-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 8px 0 32px;
+  padding: 8px 0 4px;
+}
+.crew-tab {
+  --c: #3f74d6;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  min-width: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  color: #5b6b86;
+  font-family: Montserrat, Nunito, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.crew-tab[data-crew-tab="buddy"] { --c: #d9822b; }
+.crew-tab[data-crew-tab="malley"] { --c: #3f74d6; }
+.crew-tab[data-crew-tab="oscar"] { --c: #2b2f3a; }
+.crew-tab img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 25%;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 18px rgba(16, 32, 64, 0.18);
+  opacity: 0.7;
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+}
+.crew-tab[data-crew-tab="oscar"] img { object-position: 50% 40%; }
+.crew-tab[aria-selected="true"] { color: var(--navy-2); }
+.crew-tab[aria-selected="true"] img {
+  opacity: 1;
+  transform: scale(1.08);
+  box-shadow: 0 0 0 4px var(--c), 0 10px 20px rgba(16, 32, 64, 0.22);
+}
+.chapter[data-crew]:not(.is-active) { display: none; }
+#details-meet { transition: background 0.3s ease; }
+#details-meet[data-active="buddy"] { background: #fbe7cf; }
+#details-meet[data-active="malley"] { background: #d9e6fb; }
+#details-meet[data-active="oscar"] { background: #e1e3ea; }
+.crew-next {
+  margin: 22px 0 0;
+}
+.crew-next button {
+  appearance: none;
+  border: 0;
+  background: none;
+  padding: 0;
+  color: var(--accent);
+  font-family: Montserrat, Nunito, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+.crew-next button:hover, .crew-next button:focus-visible { text-decoration: underline; }
 .chapter-art.portrait.oscar img { aspect-ratio: 1 / 1; object-position: 50% 40%; }
 .chapter-art.pair {
   display: grid;
@@ -958,14 +1025,8 @@ dialog::backdrop { background: rgba(5, 14, 28, 0.66); }
   }
   .chapter-kicker { color: var(--accent) !important; }
 
-  /* Phones: Meet the Crew shows one character at a time */
-  #details-meet { transition: background 0.3s ease; }
-  #details-meet[data-active="buddy"] { background: #fbe7cf; }
-  #details-meet[data-active="malley"] { background: #d9e6fb; }
-  #details-meet[data-active="oscar"] { background: #e1e3ea; }
+  /* Phones: compact sticky crew picker */
   .crew-tabs {
-    display: flex;
-    justify-content: center;
     gap: 12px;
     position: sticky;
     top: var(--header);
@@ -975,47 +1036,23 @@ dialog::backdrop { background: rgba(5, 14, 28, 0.66); }
     background: inherit;
   }
   .crew-tab {
-    --c: #3f74d6;
-    appearance: none;
-    border: 0;
-    background: transparent;
-    padding: 0;
     min-width: 76px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     gap: 8px;
-    cursor: pointer;
-    color: #5b6b86;
-    font-family: Montserrat, Nunito, sans-serif;
     font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
   }
-  .crew-tab[data-crew-tab="buddy"] { --c: #d9822b; }
-  .crew-tab[data-crew-tab="malley"] { --c: #3f74d6; }
-  .crew-tab[data-crew-tab="oscar"] { --c: #2b2f3a; }
   .crew-tab img {
     width: 64px;
     height: 64px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: 50% 25%;
-    border: 3px solid #fff;
+    border-width: 3px;
     box-shadow: 0 4px 10px rgba(16, 32, 64, 0.2);
     opacity: 0.65;
-    transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
   }
-  .crew-tab[data-crew-tab="oscar"] img { object-position: 50% 40%; }
-  .crew-tab[aria-selected="true"] { color: var(--navy-2); }
   .crew-tab[aria-selected="true"] img {
-    opacity: 1;
     transform: scale(1.12);
     box-shadow: 0 0 0 3px var(--c), 0 6px 14px rgba(16, 32, 64, 0.28);
   }
-  .chapter[data-crew]:not(.is-active) { display: none; }
   .chapter[data-crew] { margin-top: 10px; }
+  .crew-next { display: none; }
 
   /* Phones: Adventures chapters hang off a vertical timeline */
   .chapter.tl {
