@@ -556,6 +556,9 @@ h1, h2, h3, .nav-links a, .btn, .shot-label, .legal button {
   margin: 8px 0 32px;
   padding: 8px 0 4px;
 }
+.crew-tab[hidden] {
+  display: none !important;
+}
 .crew-tab {
   --c: #3f74d6;
   appearance: none;
