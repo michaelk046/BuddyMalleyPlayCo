@@ -1232,7 +1232,7 @@ dialog::backdrop { background: rgba(5, 14, 28, 0.66); }
 .more-explore .world-title { margin-top: 0; }
 .more-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px 16px;
   padding-bottom: 18px;
 }
@@ -1249,13 +1249,11 @@ dialog::backdrop { background: rgba(5, 14, 28, 0.66); }
 /* ---- Home: equal-size Explore cards ---- */
 .hub-grid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px 18px;
   padding-bottom: 18px;
 }
-.hub-card { grid-column: span 2; --cta: #3a5fc4; }
-.hub-card:nth-child(4) { grid-column: 2 / 4; }
-.hub-card:nth-child(5) { grid-column: 4 / 6; }
+.hub-card { --cta: #3a5fc4; }
 .hub-green  { --cta: #3f7a2a; }
 .hub-blue   { --cta: #3a5fc4; }
 .hub-purple { --cta: #6a3fc0; }
@@ -1287,15 +1285,9 @@ dialog::backdrop { background: rgba(5, 14, 28, 0.66); }
   text-transform: uppercase;
 }
 .hub-card:hover .hub-cta, .hub-card:focus-visible .hub-cta { filter: brightness(1.12); }
-@media (max-width: 980px) {
-  .hub-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .hub-card:nth-child(4) { grid-column: span 2; }
-  .hub-card:nth-child(5) { grid-column: 2 / 4; }
-}
 @media (max-width: 640px) {
   .hub-grid { grid-template-columns: 1fr; }
   .hub-card p { min-height: 0; }
-  .hub-card, .hub-card:nth-child(4), .hub-card:nth-child(5) { grid-column: auto; }
 }
 
 /* ---- Back to Home link on inner pages ---- */

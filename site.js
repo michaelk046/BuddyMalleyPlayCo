@@ -67,7 +67,6 @@
     { title: "Buddy's Red Ball", hint: "Our World", href: "our-world.html" },
     { title: "Bed", hint: "Our World · Comforts of Home", href: "our-world.html" },
     { title: "Fountain", hint: "Our World · Comforts of Home", href: "our-world.html" },
-    { title: "Behind the Scenes", hint: "Explore", href: "behind-the-scenes.html" },
     { title: "Toys & Equipment", hint: "Explore", href: "toys-and-equipment.html" },
     { title: "Stay Up to Date", hint: "Newsletter", href: "#signup" }
   ];
