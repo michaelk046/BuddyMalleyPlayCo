@@ -600,7 +600,16 @@ h1, h2, h3, .nav-links a, .btn, .shot-label, .legal button {
   box-shadow: 0 0 0 4px var(--c), 0 10px 20px rgba(16, 32, 64, 0.22);
 }
 .chapter[data-crew]:not(.is-active),
-.chapter[data-adv]:not(.is-active) { display: none; }
+.chapter[data-adv]:not(.is-active),
+.chapter[data-world]:not(.is-active) { display: none; }
+.chapter-art.object {
+  background: #eef3fa;
+}
+.chapter-art.object img {
+  object-fit: contain;
+  object-position: center;
+  background: #f4f7fb;
+}
 #details-meet { transition: background 0.3s ease; }
 #details-meet[data-active="buddy"] { background: #fbe7cf; }
 #details-meet[data-active="malley"] { background: #d9e6fb; }
@@ -616,6 +625,49 @@ h1, h2, h3, .nav-links a, .btn, .shot-label, .legal button {
 #details-adventures .crew-tab[data-adv-tab="camp"] { --c: #3f9a1a; }
 #details-adventures .crew-tab[data-adv-tab="remaster"] { --c: #6a3fc0; }
 #details-adventures .crew-tab[data-adv-tab="lessons"] { --c: #d9822b; }
+#details-world { transition: background 0.3s ease; }
+#details-world[data-group="lunar"] { background: #d9e6fb; }
+#details-world[data-group="home"] { background: #fbe7cf; }
+#details-world .world-groups { gap: 40px; }
+#details-world .world-groups .crew-tab { min-width: 110px; }
+#details-world .world-groups .crew-tab img { width: 120px; height: 120px; }
+#details-world .world-group .crew-tabs { gap: 18px; flex-wrap: wrap; margin-bottom: 8px; }
+#details-world .world-group .crew-tab { min-width: 72px; }
+#details-world .world-group .crew-tab img { width: 80px; height: 80px; object-fit: cover; background: #f4f7fb; }
+#details-world .crew-tab[data-world-group-tab="lunar"],
+#details-world .crew-tab[data-world-tab="agency"],
+#details-world .crew-tab[data-world-tab="rocket"],
+#details-world .crew-tab[data-world-tab="lem"],
+#details-world .crew-tab[data-world-tab="cradle"],
+#details-world .crew-tab[data-world-tab="suit"],
+#details-world .crew-tab[data-world-tab="helmet"],
+#details-world .crew-tab[data-world-tab="ring"] { --c: #3f74d6; }
+#details-world .crew-tab[data-world-group-tab="home"],
+#details-world .crew-tab[data-world-tab="ball"],
+#details-world .crew-tab[data-world-tab="bed"],
+#details-world .crew-tab[data-world-tab="fountain"] { --c: #d9822b; }
+.world-group:not(.is-active) { display: none !important; }
+.world-group-intro {
+  max-width: 760px;
+  margin: 0 auto 8px;
+  text-align: center;
+}
+.world-group-intro h2 {
+  margin: 0 0 8px;
+  font-size: clamp(22px, 2.6vw, 30px);
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: var(--navy-2);
+}
+.world-group-intro p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.6;
+}
 .crew-next {
   margin: 22px 0 0;
 }
@@ -1076,7 +1128,14 @@ dialog::backdrop { background: rgba(5, 14, 28, 0.66); }
     box-shadow: 0 0 0 3px var(--c), 0 6px 14px rgba(16, 32, 64, 0.28);
   }
   .chapter[data-crew],
-  .chapter[data-adv] { margin-top: 10px; }
+  .chapter[data-adv],
+  .chapter[data-world] { margin-top: 10px; }
+  #details-world .world-groups { gap: 24px; }
+  #details-world .world-groups .crew-tab { min-width: 76px; }
+  #details-world .world-groups .crew-tab img { width: 64px; height: 64px; }
+  #details-world .world-group .crew-tabs { position: static; gap: 8px; }
+  #details-world .world-group .crew-tab { min-width: 58px; }
+  #details-world .world-group .crew-tab img { width: 52px; height: 52px; }
   #details-adventures .crew-tabs { gap: 8px; }
   #details-adventures .crew-tab { min-width: 68px; }
   #details-adventures .crew-tab img { width: 56px; height: 56px; }

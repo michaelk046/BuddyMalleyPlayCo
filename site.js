@@ -55,6 +55,18 @@
     { title: "Malley", hint: "The Planner · Meet the Crew", href: "meet-the-crew.html" },
     { title: "Oscar", hint: "The Observer · Meet the Crew", href: "meet-the-crew.html" },
     { title: "Our World", hint: "Explore", href: "our-world.html" },
+    { title: "Lunar Expedition", hint: "Our World", href: "our-world.html" },
+    { title: "Space Exploration Agency", hint: "Our World", href: "our-world.html" },
+    { title: "Rocket", hint: "Our World · Lunar Expedition", href: "our-world.html" },
+    { title: "LEM", hint: "Our World · Lunar Excursion Module", href: "our-world.html" },
+    { title: "Rocket Cradle", hint: "Our World", href: "our-world.html" },
+    { title: "Spacesuit", hint: "Our World", href: "our-world.html" },
+    { title: "Space Helmet", hint: "Our World", href: "our-world.html" },
+    { title: "Transport Ring", hint: "Our World", href: "our-world.html" },
+    { title: "Comforts of Home", hint: "Our World", href: "our-world.html" },
+    { title: "Buddy's Red Ball", hint: "Our World", href: "our-world.html" },
+    { title: "Bed", hint: "Our World · Comforts of Home", href: "our-world.html" },
+    { title: "Fountain", hint: "Our World · Comforts of Home", href: "our-world.html" },
     { title: "Behind the Scenes", hint: "Explore", href: "behind-the-scenes.html" },
     { title: "Toys & Equipment", hint: "Explore", href: "toys-and-equipment.html" },
     { title: "Stay Up to Date", hint: "Newsletter", href: "#signup" }
@@ -243,4 +255,44 @@
 
   bindPicker(document.getElementById("details-meet"), { tab: "crewTab", card: "crew", next: "crewNext", nextAttr: "crew-next" });
   bindPicker(document.getElementById("details-adventures"), { tab: "advTab", card: "adv", next: "advNext", nextAttr: "adv-next" });
+  bindPicker(document.getElementById("world-group-lunar"), { tab: "worldTab", card: "world", next: "worldNext", nextAttr: "world-next" });
+  bindPicker(document.getElementById("world-group-home"), { tab: "worldTab", card: "world", next: "worldNext", nextAttr: "world-next" });
+
+  const worldPanel = document.getElementById("details-world");
+  if (worldPanel) {
+    const groupTabs = [...worldPanel.querySelectorAll("[data-world-group-tab]")];
+    const groups = [...worldPanel.querySelectorAll(".world-group")];
+
+    function showWorldGroup(name, options) {
+      const opts = options || {};
+      groupTabs.forEach((tab) => {
+        const on = tab.dataset.worldGroupTab === name;
+        tab.setAttribute("aria-selected", String(on));
+        tab.tabIndex = on ? 0 : -1;
+        if (on && opts.focus) tab.focus();
+      });
+      groups.forEach((group) => {
+        const on = group.dataset.worldGroup === name;
+        group.hidden = !on;
+        group.classList.toggle("is-active", on);
+      });
+      worldPanel.dataset.group = name;
+    }
+
+    groupTabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => showWorldGroup(tab.dataset.worldGroupTab));
+      tab.addEventListener("keydown", (event) => {
+        let next = -1;
+        if (event.key === "ArrowRight") next = (index + 1) % groupTabs.length;
+        else if (event.key === "ArrowLeft") next = (index - 1 + groupTabs.length) % groupTabs.length;
+        if (next < 0) return;
+        event.preventDefault();
+        showWorldGroup(groupTabs[next].dataset.worldGroupTab, { focus: true });
+      });
+    });
+
+    worldPanel.querySelectorAll("[data-world-group-next]").forEach((btn) => {
+      btn.addEventListener("click", () => showWorldGroup(btn.dataset.worldGroupNext));
+    });
+  }
 })();
