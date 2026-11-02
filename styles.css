@@ -84,8 +84,8 @@ h1, h2, h3, .nav-links a, .btn, .shot-label, .legal button {
 .brand {
   display: flex;
   align-items: center;
-  height: 64px;
-  overflow: hidden;
+  height: auto;
+  overflow: visible;
   color: #fff;
   text-decoration: none;
   justify-self: start;
@@ -93,10 +93,13 @@ h1, h2, h3, .nav-links a, .btn, .shot-label, .legal button {
 .brand img {
   display: block;
   flex: none;
-  height: 90px;
+  height: 68px;
   width: auto;
   max-width: none;
-  margin: -19px 0;
+  margin: 0;
+}
+.site-footer .brand img {
+  height: 112px;
 }
 
 .nav-links {
@@ -1232,8 +1235,9 @@ dialog::backdrop { background: rgba(5, 14, 28, 0.66); }
   .btn { padding: 14px 20px; }
   .signup-row { flex-direction: column; }
   .world-title { gap: 8px; }
-  .brand { height: 52px; }
-  .brand img { height: 90px; margin: -19px 0; }
+  .brand { height: auto; }
+  .brand img { height: 56px; margin: 0; }
+  .site-footer .brand img { height: 96px; }
 }
 @media (max-width: 640px) {
   .world-side { grid-template-columns: 1fr; }
