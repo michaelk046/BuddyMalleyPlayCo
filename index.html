@@ -292,7 +292,7 @@
                   Subscribe
                 </button>
               </div>
-              <input type="text" name="email_address_check" value="" class="input--hidden">
+              <input type="text" name="email_address_check" value="" class="input--hidden" autocomplete="off" tabindex="-1" aria-hidden="true">
               <input type="hidden" name="locale" value="en">
             </form>
           </div>
@@ -436,6 +436,11 @@
   <div class="toast" id="toast" role="status" hidden></div>
 
   <script>
+    document.getElementById("sib-form").addEventListener("submit", function () {
+      var trap = this.querySelector("[name=email_address_check]");
+      var email = this.querySelector("[name=EMAIL]");
+      if (trap && email && trap.value && trap.value === email.value) trap.value = "";
+    }, true);
     window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
     window.LOCALE = 'en';
     window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
