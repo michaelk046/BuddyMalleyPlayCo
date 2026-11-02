@@ -67,7 +67,6 @@
     { title: "Buddy's Red Ball", hint: "Our World", href: "our-world.html" },
     { title: "Bed", hint: "Our World · Comforts of Home", href: "our-world.html" },
     { title: "Fountain", hint: "Our World · Comforts of Home", href: "our-world.html" },
-    { title: "Toys & Equipment", hint: "Explore", href: "toys-and-equipment.html" },
     { title: "Stay Up to Date", hint: "Newsletter", href: "#signup" }
   ];
 
@@ -151,38 +150,40 @@
     });
   });
 
-  /* ---------- Newsletter signup ---------- */
+  /* ---------- Newsletter signup (pages that still use the local placeholder form) ---------- */
   const form = document.getElementById("signup-form");
-  const email = document.getElementById("email");
-  const status = document.getElementById("form-status");
-  const submitBtn = form.querySelector("button[type=submit]");
+  if (form) {
+    const email = document.getElementById("email");
+    const status = document.getElementById("form-status");
+    const submitBtn = form.querySelector("button[type=submit]");
 
-  function markSignedUp() {
-    status.textContent = "You're in. This browser will remember you stopped by.";
-    status.classList.add("ok");
-    email.value = "";
-    email.disabled = true;
-    email.removeAttribute("aria-invalid");
-    submitBtn.textContent = "Subscribed";
-    submitBtn.disabled = true;
-  }
-
-  if (localStorage.getItem("bm-signup") === "1") markSignedUp();
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const value = email.value.trim();
-    const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-    if (!ok) {
-      email.setAttribute("aria-invalid", "true");
-      status.classList.remove("ok");
-      status.textContent = value ? "That email doesn't look quite right." : "Add your email so the crew knows where to send the news.";
-      email.focus();
-      return;
+    function markSignedUp() {
+      status.textContent = "You're in. This browser will remember you stopped by.";
+      status.classList.add("ok");
+      email.value = "";
+      email.disabled = true;
+      email.removeAttribute("aria-invalid");
+      submitBtn.textContent = "Subscribed";
+      submitBtn.disabled = true;
     }
-    localStorage.setItem("bm-signup", "1");
-    markSignedUp();
-  });
+
+    if (localStorage.getItem("bm-signup") === "1") markSignedUp();
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const value = email.value.trim();
+      const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+      if (!ok) {
+        email.setAttribute("aria-invalid", "true");
+        status.classList.remove("ok");
+        status.textContent = value ? "That email doesn't look quite right." : "Add your email so the crew knows where to send the news.";
+        email.focus();
+        return;
+      }
+      localStorage.setItem("bm-signup", "1");
+      markSignedUp();
+    });
+  }
 
   /* ---------- One-at-a-time pickers (crew + adventures) ---------- */
   const phoneQuery = window.matchMedia("(max-width: 800px)");

@@ -841,6 +841,30 @@ h1, h2, h3, .nav-links a, .btn, .shot-label, .legal button {
   color: #ffe08a;
 }
 .form-status.ok { color: #b6f5c8; }
+.signup .sib-input,
+.signup .form__entry { flex: 1; min-width: 0; }
+.signup .entry__field input { width: 100%; }
+.signup .entry__error {
+  display: none;
+  margin: 8px 2px 0;
+  font-weight: 800;
+  color: #ffe08a;
+}
+.signup .input--hidden { display: none !important; }
+.signup .sib-hide-loader-icon { display: none; }
+.signup .sib-form-message-panel { display: none; margin: 0 0 12px; }
+.signup .sib-form-message-panel--active { display: block; }
+.signup .sib-form-message-panel__text {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.4;
+}
+.signup #error-message { color: #ffe08a; }
+.signup #success-message { color: #b6f5c8; }
+.signup .sib-notification__icon { width: 20px; height: 20px; flex: none; fill: currentColor; }
 
 .site-footer {
   background: var(--navy);
@@ -849,7 +873,7 @@ h1, h2, h3, .nav-links a, .btn, .shot-label, .legal button {
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.35fr 0.8fr 0.9fr 0.9fr auto;
+  grid-template-columns: 1.35fr 0.8fr 0.9fr auto;
   gap: 28px;
   align-items: start;
 }
@@ -1232,7 +1256,7 @@ dialog::backdrop { background: rgba(5, 14, 28, 0.66); }
 .more-explore .world-title { margin-top: 0; }
 .more-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px 16px;
   padding-bottom: 18px;
 }
@@ -1249,7 +1273,7 @@ dialog::backdrop { background: rgba(5, 14, 28, 0.66); }
 /* ---- Home: equal-size Explore cards, half size, one row ---- */
 .hub-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px 10px;
   padding-bottom: 12px;
 }
@@ -1295,7 +1319,7 @@ dialog::backdrop { background: rgba(5, 14, 28, 0.66); }
   .hub-cta { font-size: 10px; padding: 6px 4px; }
 }
 @media (max-width: 640px) {
-  .hub-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px 6px; }
+  .hub-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 6px; }
   .hub-card p { min-height: 0; font-size: 10px; padding: 6px 4px 2px; }
   .hub-cta { font-size: 8px; letter-spacing: 0.02em; margin: 2px 4px 6px; }
 }
