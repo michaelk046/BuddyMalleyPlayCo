@@ -43,7 +43,7 @@
   const catalog = [
     { title: "Home", hint: "Every adventure starts with a wag", href: "index.html" },
     { title: "Catch Up", hint: "Explore Adventures", href: "index.html#catch-up" },
-    { title: "Latest Episode", hint: "Episode 16 · Moon Capsule Recovery", href: "index.html#latest" },
+    { title: "Latest Episode", hint: "Remastered Episode 1 · Introduction", href: "index.html#latest" },
     { title: "Adventures", hint: "Explore", href: "adventures.html" },
     { title: "Lunar Expedition", hint: "Adventures", href: "adventures.html" },
     { title: "Buddy & Malley Remastered", hint: "Adventures", href: "adventures.html" },
@@ -67,6 +67,7 @@
     { title: "Buddy's Red Ball", hint: "Our World", href: "our-world.html" },
     { title: "Bed", hint: "Our World · Comforts of Home", href: "our-world.html" },
     { title: "Fountain", hint: "Our World · Comforts of Home", href: "our-world.html" },
+    { title: "Toys & Equipment", hint: "Explore", href: "toys-and-equipment.html" },
     { title: "Stay Up to Date", hint: "Newsletter", href: "#signup" }
   ];
 
