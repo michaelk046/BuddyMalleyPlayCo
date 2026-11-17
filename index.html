@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; form-action 'self' https://*.sibforms.com; script-src 'self' 'unsafe-inline' https://sibforms.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://sibforms.com https://*.sibforms.com">
   <title>Buddy &amp; Malley Play Co. | Family Dog Adventures</title>
   <meta name="description" content="Join Buddy &amp; Malley, two Australian Shepherds, on family adventures from the backyard to the Moon. Watch episodes and meet the crew.">
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -436,11 +437,6 @@
   <div class="toast" id="toast" role="status" hidden></div>
 
   <script>
-    document.getElementById("sib-form").addEventListener("submit", function () {
-      var trap = this.querySelector("[name=email_address_check]");
-      var email = this.querySelector("[name=EMAIL]");
-      if (trap && email && trap.value && trap.value === email.value) trap.value = "";
-    }, true);
     window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
     window.LOCALE = 'en';
     window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
