@@ -1355,11 +1355,19 @@ dialog::backdrop {
 .back-link:hover, .back-link:focus-visible { background: rgba(255, 255, 255, 0.24); transform: translateX(-3px); }
 .back-link.back-bottom { display: flex; width: fit-content; margin: 22px auto 0; }
 .guide-note {
-  margin: 14px 0 0;
-  max-width: 46rem;
-  color: var(--ink);
+  margin: 18px 0 0;
+  color: #fff;
   font-weight: 700;
-  line-height: 1.5;
+  line-height: 1.45;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
-.guide-note a { color: #9a3a1a; text-decoration: underline; text-underline-offset: 3px; }
+.guide-note a {
+  color: var(--gold);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+.guide-note a:hover,
+.guide-note a:focus-visible { color: #fff; }
 @media (hover: none) { .back-link:hover { transform: none; } }
