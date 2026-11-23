@@ -111,8 +111,15 @@
     .bm-guide p, .bm-guide li { line-height: 1.55; color: #d5deea; }
     .bm-guide a { color: #f5c518; }
     .bm-guide .bm-eyebrow { font-weight: 800; letter-spacing: 0.12em; color: #e2ae04; }
-    .bm-guide-intro { display: grid; grid-template-columns: minmax(180px, 320px) 1fr; gap: 1.6rem; align-items: center; }
-    .bm-guide-intro img { width: 100%; border-radius: 18px; }
+    .bm-guide-intro { display: block; }
+    .bm-guide-intro img {
+      display: block;
+      width: min(100%, 920px);
+      height: auto;
+      margin: 0 auto 1.5rem;
+      border-radius: 22px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+    }
     .bm-disclosure { margin: 0.8rem 0 0; padding: 0.85rem 1rem; border-radius: 14px; background: rgba(255,255,255,0.08); color: #d5deea; }
     .bm-table-wrap { overflow-x: auto; margin: 1rem 0 0.6rem; }
     .bm-compare { width: 100%; border-collapse: collapse; min-width: 760px; background: rgba(255,255,255,0.06); }
@@ -126,8 +133,7 @@
     .bm-guide summary { cursor: pointer; font-weight: 800; color: #fff; }
     .bm-guide details p { margin: 0.55rem 0 0; }
     @media (max-width: 760px) {
-      .bm-guide-intro { grid-template-columns: 1fr; }
-      .bm-guide-intro img { max-width: 360px; }
+      .bm-guide-intro img { width: 100%; }
       .bm-compare { min-width: 0; }
       .bm-compare thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
       .bm-compare, .bm-compare tbody, .bm-compare tr, .bm-compare td { display: block; width: 100%; }
@@ -175,7 +181,7 @@
       <div class="wrap">
         <a class="back-link" href="toys-and-equipment.html"><span aria-hidden="true">&larr;</span> Toys &amp; Equipment</a>
         <div class="bm-guide-intro">
-          <img src="Images/Explore/Explore_Toys.webp" width="1254" height="1254" alt="Buddy and Malley at a desk with toys and gear on the shelves behind them. This photo is not the indoor exercise equipment discussed in this guide.">
+          <img src="Images/affiliate/small_apartment.png" width="1672" height="941" alt="Buddy and Malley play with indoor agility equipment in a small apartment, including cones, a tunnel, and weave poles.">
           <div>
             <p class="bm-eyebrow">Research-based recommendation</p>
             <h1>Best Indoor Dog Exercise Equipment for Small Apartments</h1>
