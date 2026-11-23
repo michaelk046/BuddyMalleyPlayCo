@@ -103,14 +103,14 @@
       </ul>
 
       <div class="nav-tools">
-        <button class="icon-btn" type="button" id="open-search" aria-haspopup="dialog" aria-controls="search-dialog">
+        <button class="icon-btn" type="button" id="open-search" aria-haspopup="dialog" aria-controls="search-dialog" commandfor="search-dialog" command="show-modal">
           <span class="visually-hidden">Search</span>
           <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
             <circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/>
             <path d="M16 16.5 20.5 21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </button>
-        <button class="icon-btn" type="button" id="open-account" aria-haspopup="dialog" aria-controls="account-dialog">
+        <button class="icon-btn" type="button" id="open-account" aria-haspopup="dialog" aria-controls="account-dialog" commandfor="account-dialog" command="show-modal">
           <span class="visually-hidden">Account</span>
           <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
             <circle cx="12" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/>
@@ -237,6 +237,7 @@
             <img loading="lazy" decoding="async" class="badge" src="Images/Explore/Explore_Icon_Parents.svg" alt="">
           </a>
         </div>
+        <p class="guide-note">When rain, snow, or heat keeps a walk short, see the research-based guide to <a href="indoor-dog-exercise-small-apartments.html">indoor dog exercise for small apartments</a>.</p>
       </div>
     </section>
 
@@ -319,7 +320,7 @@
           <li><a href="our-world.html">Our World</a></li>
           <li hidden><a href="behind-the-scenes.html">Behind the Scenes</a></li>
           <li><a href="toys-and-equipment.html">Toys &amp; Equipment</a></li>
-          <li><a href="toys-and-equipment.html">Store</a></li>
+          <li hidden><a href="toys-and-equipment.html">Store</a></li>
         </ul>
       </div>
       <div>
@@ -345,39 +346,39 @@
       <img loading="lazy" decoding="async" class="footer-mark" src="Images/Explore/Footer_Icon.svg" alt="" width="1170" height="866">
     </div>
     <div class="wrap legal">
-      <button type="button" data-dialog="privacy-dialog">Privacy</button>
-      <button type="button" data-dialog="terms-dialog">Terms of Use</button>
-      <button type="button" data-dialog="contact-dialog" hidden>Contact</button>
+      <button type="button" data-dialog="privacy-dialog" commandfor="privacy-dialog" command="show-modal">Privacy</button>
+      <button type="button" data-dialog="terms-dialog" commandfor="terms-dialog" command="show-modal">Terms of Use</button>
+      <button type="button" data-dialog="contact-dialog" commandfor="contact-dialog" command="show-modal" hidden>Contact</button>
     </div>
   </footer>
 
-  <dialog id="search-dialog" aria-labelledby="search-title">
+  <dialog id="search-dialog" aria-labelledby="search-title" closedby="any">
     <form class="dialog-card" id="search-form" role="search">
       <div class="dialog-head">
         <h2 id="search-title">Search</h2>
-        <button class="dialog-x" type="button" data-close>Close</button>
+        <button class="dialog-x" type="button" data-close commandfor="search-dialog" command="close">Close</button>
       </div>
       <label class="visually-hidden" for="search-input">Search the site</label>
-      <input id="search-input" type="search" placeholder="Try crew, store, episode, parents..." autocomplete="off">
+      <input id="search-input" type="search" placeholder="Try crew, store, episode, parents..." autocomplete="off" autofocus>
       <ul id="search-results"></ul>
     </form>
   </dialog>
 
-  <dialog id="account-dialog" aria-labelledby="account-title">
+  <dialog id="account-dialog" aria-labelledby="account-title" closedby="any">
     <div class="dialog-card">
       <div class="dialog-head">
         <h2 id="account-title">Crew accounts</h2>
-        <button class="dialog-x" type="button" data-close>Close</button>
+        <button class="dialog-x" type="button" data-close commandfor="account-dialog" command="close">Close</button>
       </div>
       <p>Passes for the crew aren't open yet. Check back when the next adventure launches.</p>
     </div>
   </dialog>
 
-  <dialog id="privacy-dialog" aria-labelledby="privacy-title">
+  <dialog id="privacy-dialog" aria-labelledby="privacy-title" closedby="any">
     <div class="dialog-card">
       <div class="dialog-head">
         <h2 id="privacy-title">Privacy</h2>
-        <button class="dialog-x" type="button" data-close>Close</button>
+        <button class="dialog-x" type="button" data-close commandfor="privacy-dialog" command="close">Close</button>
       </div>
       <p>Buddy &amp; Malley Play Co. respects your privacy.</p>
       <p>We may collect information you voluntarily provide, such as your email address if you sign up for updates or contact us. We use this information only to provide the services or communications you requested.</p>
@@ -391,11 +392,11 @@
     </div>
   </dialog>
 
-  <dialog id="terms-dialog" aria-labelledby="terms-title">
+  <dialog id="terms-dialog" aria-labelledby="terms-title" closedby="any">
     <div class="dialog-card">
       <div class="dialog-head">
         <h2 id="terms-title">Terms of Use</h2>
-        <button class="dialog-x" type="button" data-close>Close</button>
+        <button class="dialog-x" type="button" data-close commandfor="terms-dialog" command="close">Close</button>
       </div>
       <p>Welcome to Buddy &amp; Malley Play Co. By using this website, you agree to the following terms.</p>
       <h3>Content</h3>
@@ -424,11 +425,11 @@
     </div>
   </dialog>
 
-  <dialog id="contact-dialog" aria-labelledby="contact-title">
+  <dialog id="contact-dialog" aria-labelledby="contact-title" closedby="any">
     <div class="dialog-card">
       <div class="dialog-head">
         <h2 id="contact-title">Contact</h2>
-        <button class="dialog-x" type="button" data-close>Close</button>
+        <button class="dialog-x" type="button" data-close commandfor="contact-dialog" command="close">Close</button>
       </div>
       <p>The mailbox is still being set up. Leave your email in Stay Up to Date and the crew will know you stopped by.</p>
     </div>

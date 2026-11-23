@@ -68,6 +68,7 @@
     { title: "Bed", hint: "Our World · Comforts of Home", href: "our-world.html" },
     { title: "Fountain", hint: "Our World · Comforts of Home", href: "our-world.html" },
     { title: "Toys & Equipment", hint: "Explore", href: "toys-and-equipment.html" },
+    { title: "Indoor Dog Exercise", hint: "Small apartments · research-based guide", href: "indoor-dog-exercise-small-apartments.html" },
     { title: "Stay Up to Date", hint: "Newsletter", href: "#signup" }
   ];
 
@@ -82,15 +83,15 @@
       const hay = (item.title + " " + item.hint).toLowerCase();
       return q === "" || hay.includes(q);
     });
-    searchResults.innerHTML = "";
+    if (!(searchResults instanceof Element)) return;
     if (!matches.length) {
       const note = document.createElement("li");
       note.className = "empty-note";
       note.textContent = "Nothing matches that yet.";
-      searchResults.appendChild(note);
+      searchResults.replaceChildren(note);
       return;
     }
-    matches.forEach((item) => {
+    searchResults.replaceChildren(...matches.map((item) => {
       const li = document.createElement("li");
       const link = document.createElement("a");
       link.href = item.href;
@@ -101,15 +102,19 @@
       link.append(title, hint);
       link.addEventListener("click", () => searchDialog.close());
       li.appendChild(link);
-      searchResults.appendChild(li);
-    });
+      return li;
+    }));
   }
+
+  const invokerCommands = "commandForElement" in HTMLButtonElement.prototype;
 
   document.getElementById("open-search").addEventListener("click", () => {
     searchInput.value = "";
     renderResults("");
-    searchDialog.showModal();
-    searchInput.focus();
+    if (!invokerCommands) {
+      searchDialog.showModal();
+      searchInput.focus();
+    }
   });
   searchInput.addEventListener("input", () => renderResults(searchInput.value));
   searchForm.addEventListener("submit", (event) => {
@@ -119,22 +124,38 @@
   });
 
   /* ---------- Dialogs ---------- */
-  document.getElementById("open-account").addEventListener("click", () => {
-    document.getElementById("account-dialog").showModal();
-  });
-  document.querySelectorAll("[data-dialog]").forEach((button) => {
-    button.addEventListener("click", () => {
-      document.getElementById(button.dataset.dialog).showModal();
+  /* Invoker commands open and close dialogs in current browsers. These listeners cover browsers that ignore command and commandfor. */
+  if (!invokerCommands) {
+    document.getElementById("open-account").addEventListener("click", () => {
+      document.getElementById("account-dialog").showModal();
     });
-  });
-  document.querySelectorAll("dialog").forEach((dialog) => {
-    dialog.addEventListener("click", (event) => {
-      if (event.target === dialog) dialog.close();
+    document.querySelectorAll("[data-dialog]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const dialog = document.getElementById(button.dataset.dialog);
+        if (dialog instanceof HTMLDialogElement) dialog.showModal();
+      });
     });
-    dialog.querySelectorAll("[data-close]").forEach((button) => {
-      button.addEventListener("click", () => dialog.close());
+    document.querySelectorAll("dialog [data-close]").forEach((button) => {
+      const dialog = button.closest("dialog");
+      if (dialog instanceof HTMLDialogElement) button.addEventListener("click", () => dialog.close());
     });
-  });
+  }
+  /* closedby="any" dismisses a backdrop click where supported. Safari still needs this pointer check. */
+  if (!("closedBy" in HTMLDialogElement.prototype)) {
+    const pointerOutside = (event, dialog) => {
+      const rect = dialog.getBoundingClientRect();
+      return event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
+    };
+    document.querySelectorAll('dialog[closedby="any"]').forEach((dialog) => {
+      let pressedOutside = false;
+      dialog.addEventListener("pointerdown", (event) => {
+        pressedOutside = pointerOutside(event, dialog);
+      });
+      dialog.addEventListener("pointerup", (event) => {
+        if (pressedOutside && pointerOutside(event, dialog)) dialog.close();
+      });
+    });
+  }
 
   /* ---------- Toast + social buttons ---------- */
   const toast = document.getElementById("toast");
@@ -150,41 +171,6 @@
       showToast(button.dataset.social + " is almost ready.");
     });
   });
-
-  /* ---------- Newsletter signup (pages that still use the local placeholder form) ---------- */
-  const form = document.getElementById("signup-form");
-  if (form) {
-    const email = document.getElementById("email");
-    const status = document.getElementById("form-status");
-    const submitBtn = form.querySelector("button[type=submit]");
-
-    function markSignedUp() {
-      status.textContent = "You're in. This browser will remember you stopped by.";
-      status.classList.add("ok");
-      email.value = "";
-      email.disabled = true;
-      email.removeAttribute("aria-invalid");
-      submitBtn.textContent = "Subscribed";
-      submitBtn.disabled = true;
-    }
-
-    if (localStorage.getItem("bm-signup") === "1") markSignedUp();
-
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const value = email.value.trim();
-      const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-      if (!ok) {
-        email.setAttribute("aria-invalid", "true");
-        status.classList.remove("ok");
-        status.textContent = value ? "That email doesn't look quite right." : "Add your email so the crew knows where to send the news.";
-        email.focus();
-        return;
-      }
-      localStorage.setItem("bm-signup", "1");
-      markSignedUp();
-    });
-  }
 
   /* ---------- One-at-a-time pickers (crew + adventures) ---------- */
   const phoneQuery = window.matchMedia("(max-width: 800px)");

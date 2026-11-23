@@ -6,7 +6,7 @@
   --gold: #f5c518;
   --gold-deep: #e2ae04;
   --red: #e31b23;
-  --yt: #ff2d2d;
+  --yt: #e01e1e;
   --line: rgba(255, 255, 255, 0.14);
   --shadow: 0 18px 40px rgba(7, 21, 37, 0.18);
   --wrap: 1160px;
@@ -489,6 +489,7 @@ h1, h2, h3, .nav-links a, .btn, .shot-label, .legal button {
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
+.chapter-body h2,
 .chapter-body h3 {
   margin: 0 0 8px;
   font-size: clamp(22px, 2.6vw, 30px);
@@ -546,6 +547,7 @@ h1, h2, h3, .nav-links a, .btn, .shot-label, .legal button {
   text-align: center;
 }
 .chapter.closing .chapter-body { max-width: 640px; margin: 0 auto; }
+.chapter.closing h2,
 .chapter.closing h3 { color: #fff; }
 .chapter.closing p { color: rgba(255, 255, 255, 0.82); }
 .chapter.closing p.chapter-line { color: #fff; }
@@ -950,7 +952,12 @@ dialog {
   color: var(--ink);
   box-shadow: var(--shadow);
 }
-dialog::backdrop { background: rgba(5, 14, 28, 0.66); }
+dialog:modal { overscroll-behavior: contain; }
+dialog::backdrop {
+  background: rgba(5, 14, 28, 0.66);
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
 .dialog-card { padding: 22px; overflow-y: auto; max-height: min(80vh, 720px); }
 .dialog-head {
   display: flex;
@@ -1347,4 +1354,12 @@ dialog::backdrop { background: rgba(5, 14, 28, 0.66); }
 }
 .back-link:hover, .back-link:focus-visible { background: rgba(255, 255, 255, 0.24); transform: translateX(-3px); }
 .back-link.back-bottom { display: flex; width: fit-content; margin: 22px auto 0; }
+.guide-note {
+  margin: 14px 0 0;
+  max-width: 46rem;
+  color: var(--ink);
+  font-weight: 700;
+  line-height: 1.5;
+}
+.guide-note a { color: #9a3a1a; text-decoration: underline; text-underline-offset: 3px; }
 @media (hover: none) { .back-link:hover { transform: none; } }

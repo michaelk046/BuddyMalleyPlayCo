@@ -92,6 +92,7 @@
 .bm-shop{margin:2rem 0;padding:2rem;border-radius:18px;background:rgba(23,48,70,.65)}
 .bm-shop .btn{display:inline-block;margin:.8rem 0}
 .bm-disclosure{font-size:.86rem;line-height:1.6;margin-top:1.2rem;color:#c5d0e0}
+.bm-shop p a{color:#f5c518;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:700px){.bm-toys-intro{grid-template-columns:1fr}.bm-toys-intro img{max-width:360px}.bm-shop{padding:1.2rem}}
 </style>
 </head>
@@ -112,14 +113,14 @@
 <li><a aria-current="page" href="toys-and-equipment.html">Toys &amp; Equipment</a></li>
 </ul>
 <div class="nav-tools">
-<button aria-controls="search-dialog" aria-haspopup="dialog" class="icon-btn" id="open-search" type="button">
+<button aria-controls="search-dialog" aria-haspopup="dialog" class="icon-btn" command="show-modal" commandfor="search-dialog" id="open-search" type="button">
 <span class="visually-hidden">Search</span>
 <svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22">
 <circle cx="11" cy="11" fill="none" r="6.5" stroke="currentColor" stroke-width="2"></circle>
 <path d="M16 16.5 20.5 21" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
 </svg>
 </button>
-<button aria-controls="account-dialog" aria-haspopup="dialog" class="icon-btn" id="open-account" type="button">
+<button aria-controls="account-dialog" aria-haspopup="dialog" class="icon-btn" command="show-modal" commandfor="account-dialog" id="open-account" type="button">
 <span class="visually-hidden">Account</span>
 <svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22">
 <circle cx="12" cy="8" fill="none" r="3.2" stroke="currentColor" stroke-width="2"></circle>
@@ -238,7 +239,7 @@
 <p>A more compact modular training setup for introducing structured movement and low obstacle exercises. It caught our attention as a possible starting point for canine fitness activities; we haven't tested it yet.</p>
 <a class="btn gold" href="https://www.creator.anchor.store/a/2uVTri2LEk" rel="noopener noreferrer sponsored" target="_blank">View on Chewy</a>
 </article>
-</div><div class="bm-shop"><h2>Explore Our Chewy Collection</h2><p>Want to browse more toys and equipment? Visit the Buddy &amp; Malley Play Co. storefront on Chewy.</p><a class="btn gold" href="https://chewpanions.chewy.com/buddymalleyplayco" rel="noopener noreferrer sponsored" target="_blank">Visit Our Chewy Storefront</a><p class="bm-disclosure"><strong>Affiliate disclosure:</strong> Some links may earn Buddy &amp; Malley Play Co. a commission on qualifying purchases, at no additional cost to you. Toys under Buddy &amp; Malley Tested have been used by Buddy and Malley. Wishlist items have not.</p></div><a class="back-link back-bottom" href="index.html#explore-world">← Back to Home</a></div></section>
+</div><div class="bm-shop"><h2>Explore Our Chewy Collection</h2><p>Want to browse more toys and equipment? Visit the Buddy &amp; Malley Play Co. storefront on Chewy.</p><a class="btn gold" href="https://chewpanions.chewy.com/buddymalleyplayco" rel="noopener noreferrer sponsored" target="_blank">Visit Our Chewy Storefront</a><p>For compact indoor activity when the weather keeps a walk short, read <a href="indoor-dog-exercise-small-apartments.html">Best Indoor Dog Exercise Equipment for Small Apartments</a>. That guide is research-based. Buddy and Malley have not tested the equipment categories in it.</p><p class="bm-disclosure"><strong>Affiliate disclosure:</strong> Some links may earn Buddy &amp; Malley Play Co. a commission on qualifying purchases, at no additional cost to you. Toys under Buddy &amp; Malley Tested have been used by Buddy and Malley. Wishlist items have not.</p></div><a class="back-link back-bottom" href="index.html#explore-world">← Back to Home</a></div></section>
 <section aria-labelledby="more-title" class="missions more-explore">
 <div class="wrap">
 <h2 class="world-title" id="more-title">
@@ -275,7 +276,17 @@
 <img alt="" decoding="async" height="724" loading="lazy" src="Images/Backgrounds/Explore.webp" width="2172"/>
 </div>
 <div class="wrap signup-layout">
-<form class="signup-card" id="signup-form" novalidate="">
+<div id="sib-form-container" class="signup-card">
+<div id="error-message" class="sib-form-message-panel" role="alert">
+<div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+<span class="sib-form-message-panel__inner-text">Your subscription could not be saved. Please try again.</span>
+</div>
+</div>
+<div id="success-message" class="sib-form-message-panel" role="status">
+<div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+<span class="sib-form-message-panel__inner-text">Almost there! Check your email and click the confirmation link to join Buddy &amp; Malley’s updates. 🐾</span>
+</div>
+</div>
 <div class="signup-head">
 <span aria-hidden="true" class="mail-badge">
 <svg height="26" viewbox="0 0 24 24" width="26">
@@ -288,13 +299,25 @@
 <p>Get mission updates, new episode alerts and behind the scenes news!</p>
 </div>
 </div>
+<div id="sib-container">
+<form id="sib-form" method="POST" action="https://b4734563.sibforms.com/serve/MUIFAB-HckZlX88h65cuuHmZJmGXdpUbcBokMOd8sVjF7w4Kugju6hIogdfNHso5O2wrrjKjaBPYVSpZEYhk35dBhtuOzZcfQZs7lUSDLROKCSdYzpSwy_7c9N2oSEi_tzB9JSH0_oBFN6ZLZjUXcjW1ATGczeLUAWv3ri3PdzRsSSWMB_ILmPQ4up4aqHhIRer5owBsOAEqSKLSKA==" data-type="subscription">
 <div class="signup-row">
-<label class="visually-hidden" for="email">Email</label>
-<input autocomplete="email" id="email" inputmode="email" name="email" placeholder="Enter your email" required="" type="email"/>
-<button class="btn gold" type="submit">Subscribe</button>
+<div class="sib-input">
+<div class="form__entry entry_block">
+<label class="visually-hidden" for="EMAIL">Email</label>
+<div class="entry__field">
+<input class="input" id="EMAIL" name="EMAIL" type="email" inputmode="email" autocomplete="email" placeholder="Enter your email" data-required="true" required="">
 </div>
-<p class="form-status" id="form-status" role="status"></p>
+<label class="entry__error entry__error--primary"></label>
+</div>
+</div>
+<button class="btn gold sib-form-block__button sib-form-block__button-with-loader" type="submit">Subscribe</button>
+</div>
+<input type="text" name="email_address_check" value="" class="input--hidden" autocomplete="off" tabindex="-1" aria-hidden="true">
+<input type="hidden" name="locale" value="en">
 </form>
+</div>
+</div>
 </div>
 </section>
 </main>
@@ -341,36 +364,36 @@
 <img alt="" class="footer-mark" decoding="async" height="866" loading="lazy" src="Images/Explore/Footer_Icon.svg" width="1170"/>
 </div>
 <div class="wrap legal">
-<button data-dialog="privacy-dialog" type="button">Privacy</button>
-<button data-dialog="terms-dialog" type="button">Terms of Use</button>
-<button data-dialog="contact-dialog" hidden="" type="button">Contact</button>
+<button command="show-modal" commandfor="privacy-dialog" data-dialog="privacy-dialog" type="button">Privacy</button>
+<button command="show-modal" commandfor="terms-dialog" data-dialog="terms-dialog" type="button">Terms of Use</button>
+<button command="show-modal" commandfor="contact-dialog" data-dialog="contact-dialog" hidden="" type="button">Contact</button>
 </div>
 </footer>
-<dialog aria-labelledby="search-title" id="search-dialog">
+<dialog aria-labelledby="search-title" closedby="any" id="search-dialog">
 <form class="dialog-card" id="search-form" role="search">
 <div class="dialog-head">
 <h2 id="search-title">Search</h2>
-<button class="dialog-x" data-close="" type="button">Close</button>
+<button class="dialog-x" command="close" commandfor="search-dialog" data-close="" type="button">Close</button>
 </div>
 <label class="visually-hidden" for="search-input">Search the site</label>
-<input autocomplete="off" id="search-input" placeholder="Try crew, store, episode, parents..." type="search"/>
+<input autocomplete="off" autofocus="" id="search-input" placeholder="Try crew, store, episode, parents..." type="search"/>
 <ul id="search-results"></ul>
 </form>
 </dialog>
-<dialog aria-labelledby="account-title" id="account-dialog">
+<dialog aria-labelledby="account-title" closedby="any" id="account-dialog">
 <div class="dialog-card">
 <div class="dialog-head">
 <h2 id="account-title">Crew accounts</h2>
-<button class="dialog-x" data-close="" type="button">Close</button>
+<button class="dialog-x" command="close" commandfor="account-dialog" data-close="" type="button">Close</button>
 </div>
 <p>Passes for the crew aren't open yet. Check back when the next adventure launches.</p>
 </div>
 </dialog>
-<dialog aria-labelledby="privacy-title" id="privacy-dialog">
+<dialog aria-labelledby="privacy-title" closedby="any" id="privacy-dialog">
 <div class="dialog-card">
 <div class="dialog-head">
 <h2 id="privacy-title">Privacy</h2>
-<button class="dialog-x" data-close="" type="button">Close</button>
+<button class="dialog-x" command="close" commandfor="privacy-dialog" data-close="" type="button">Close</button>
 </div>
 <p>Buddy &amp; Malley Play Co. respects your privacy.</p>
 <p>We may collect information you voluntarily provide, such as your email address if you sign up for updates or contact us. We use this information only to provide the services or communications you requested.</p>
@@ -383,11 +406,11 @@
 <p>Last updated: October 31, 2026</p>
 </div>
 </dialog>
-<dialog aria-labelledby="terms-title" id="terms-dialog">
+<dialog aria-labelledby="terms-title" closedby="any" id="terms-dialog">
 <div class="dialog-card">
 <div class="dialog-head">
 <h2 id="terms-title">Terms of Use</h2>
-<button class="dialog-x" data-close="" type="button">Close</button>
+<button class="dialog-x" command="close" commandfor="terms-dialog" data-close="" type="button">Close</button>
 </div>
 <p>Welcome to Buddy &amp; Malley Play Co. By using this website, you agree to the following terms.</p>
 <h3>Content</h3>
@@ -415,16 +438,36 @@
 <p>Last updated: October 31, 2026</p>
 </div>
 </dialog>
-<dialog aria-labelledby="contact-title" id="contact-dialog">
+<dialog aria-labelledby="contact-title" closedby="any" id="contact-dialog">
 <div class="dialog-card">
 <div class="dialog-head">
 <h2 id="contact-title">Contact</h2>
-<button class="dialog-x" data-close="" type="button">Close</button>
+<button class="dialog-x" command="close" commandfor="contact-dialog" data-close="" type="button">Close</button>
 </div>
 <p>The mailbox is still being set up. Leave your email in Stay Up to Date and the crew will know you stopped by.</p>
 </div>
 </dialog>
 <div class="toast" hidden="" id="toast" role="status"></div>
+<script>
+    window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+    window.LOCALE = 'en';
+    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+    window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
+    window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+    window.INVALID_NUMBER = "The information provided is invalid. Please review the field format and try again.";
+    window.INVALID_DATE = "Please enter a valid date";
+    window.REQUIRED_MULTISELECT_MESSAGE = 'Please select at least 1 option';
+    window.translation = {
+      common: {
+        selectedList: '{quantity} list selected',
+        selectedLists: '{quantity} lists selected',
+        selectedOption: '{quantity} selected',
+        selectedOptions: '{quantity} selected',
+      }
+    };
+    var AUTOHIDE = Boolean(0);
+  </script>
+<script defer="" src="https://sibforms.com/forms/end-form/build/main.js"></script>
 <script defer="" src="site.js"></script>
 </body>
 </html>
