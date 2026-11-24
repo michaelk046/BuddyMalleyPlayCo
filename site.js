@@ -282,4 +282,28 @@
       btn.addEventListener("click", () => showWorldGroup(btn.dataset.worldGroupNext));
     });
   }
+
+  /* Analytics loads only after an explicit choice. The choice is stored locally and is not sent to Google. */
+  const analyticsKey = "bm-analytics";
+  let analyticsChoice = null;
+  try { analyticsChoice = localStorage.getItem(analyticsKey); } catch (ignore) {}
+  if (analyticsChoice !== "granted" && analyticsChoice !== "denied") {
+    const bar = document.createElement("div");
+    bar.className = "bm-consent";
+    bar.setAttribute("role", "region");
+    bar.setAttribute("aria-label", "Analytics choice");
+    bar.innerHTML = '<p>Allow Google Analytics to record page visits on this site? It does not receive your email address.</p><div class="bm-consent-actions"><button class="btn gold" type="button" id="bm-analytics-accept">Allow analytics</button><button class="btn" type="button" id="bm-analytics-decline">No thanks</button><button class="bm-consent-privacy" type="button">Privacy</button></div>';
+    document.body.appendChild(bar);
+    const saveChoice = (value) => {
+      try { localStorage.setItem(analyticsKey, value); } catch (ignore) {}
+      bar.remove();
+      if (value === "granted" && typeof window.bmLoadAnalytics === "function") window.bmLoadAnalytics();
+    };
+    bar.querySelector("#bm-analytics-accept").addEventListener("click", () => saveChoice("granted"));
+    bar.querySelector("#bm-analytics-decline").addEventListener("click", () => saveChoice("denied"));
+    bar.querySelector(".bm-consent-privacy").addEventListener("click", () => {
+      const dialog = document.getElementById("privacy-dialog");
+      if (dialog instanceof HTMLDialogElement && !dialog.open) dialog.showModal();
+    });
+  }
 })();

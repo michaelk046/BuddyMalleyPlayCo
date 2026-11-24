@@ -2,9 +2,33 @@
 
 <html lang="en">
 <head>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+    window.bmLoadAnalytics = function () {
+      if (window.bmAnalyticsLoaded) return;
+      window.bmAnalyticsLoaded = true;
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+      gtag('js', new Date());
+      gtag('config', 'G-28VXV1EG1T', { send_page_view: true, allow_google_signals: false });
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-28VXV1EG1T';
+      document.head.appendChild(script);
+    };
+    try {
+      if (localStorage.getItem('bm-analytics') === 'granted') window.bmLoadAnalytics();
+    } catch (ignore) {}
+  </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; form-action 'self' https://*.sibforms.com; script-src 'self' 'unsafe-inline' https://sibforms.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://sibforms.com https://*.sibforms.com"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; form-action 'self' https://*.sibforms.com; script-src 'self' 'unsafe-inline' https://sibforms.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://sibforms.com https://*.sibforms.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com"/>
 <title>Toys &amp; Equipment | Buddy &amp; Malley Play Co.</title>
 <meta content="Toys, gear and equipment Buddy &amp; Malley love, plus Play Co. recommendations worth checking out. Explore toys Buddy and Malley actually use, plus equipment on their wishlist." name="description"/>
 <meta content="index, follow" name="robots"/>
@@ -392,13 +416,13 @@
 </div>
 <p>Buddy &amp; Malley Play Co. respects your privacy.</p>
 <p>We may collect information you voluntarily provide, such as your email address if you sign up for updates or contact us. We use this information only to provide the services or communications you requested.</p>
-<p>Our website may also collect basic technical information, such as browser type, device information, and website usage data, to help us understand how visitors use the site and improve their experience.</p>
+<p>Our website may also collect basic technical information, such as browser type, device information, and website usage data, to help us understand how visitors use the site and improve their experience.</p><p>If you choose Allow analytics, this site loads Google Analytics 4. Google may set cookies and receive the page you visit, general device and browser information, and an approximate location derived from your IP address. It can also record that a visit continued to another website, such as a retailer linked from this site. We do not send your name, email address, or newsletter signup to Google Analytics. If you choose No thanks, the Google Analytics tag is not loaded. You can change that choice later by clearing this site's stored data in your browser.</p>
 <p>We do not sell your personal information.</p>
 <p>Our website may contain links to third-party websites and services, including social media platforms, video platforms, and retailers. Those websites have their own privacy practices, and Buddy &amp; Malley Play Co. is not responsible for how third-party sites collect or use information.</p>
 <p>Some links on this website may be affiliate links. If you make a purchase through an affiliate link, Buddy &amp; Malley Play Co. may receive a commission at no additional cost to you.</p>
 <p>Because Buddy &amp; Malley Play Co. creates family-friendly content, we take children's privacy seriously. We do not knowingly collect personal information directly from children under 13 without appropriate parental consent.</p>
 <p>This privacy notice may be updated as the website grows and new features are introduced.</p>
-<p>Last updated: October 31, 2026</p>
+<p>Last updated: November 24, 2026</p>
 </div>
 </dialog>
 <dialog aria-labelledby="terms-title" closedby="any" id="terms-dialog">

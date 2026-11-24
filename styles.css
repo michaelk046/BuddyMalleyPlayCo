@@ -1371,3 +1371,36 @@ dialog::backdrop {
 .guide-note a:hover,
 .guide-note a:focus-visible { color: #fff; }
 @media (hover: none) { .back-link:hover { transform: none; } }
+.bm-consent {
+  position: fixed;
+  z-index: 60;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  background: #0b2144;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+.bm-consent p { margin: 0; flex: 1 1 16rem; color: #e7eef6; font-weight: 700; line-height: 1.4; }
+.bm-consent-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.bm-consent-actions .btn { margin: 0; }
+.bm-consent-privacy {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: #f5c518;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
