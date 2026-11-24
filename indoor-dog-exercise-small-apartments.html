@@ -59,7 +59,8 @@
         "description": "Explore compact indoor dog exercise equipment, apartment-friendly agility ideas, storage tips, and budget options for keeping dogs active indoors.",
         "isPartOf": { "@id": "https://buddymalleyplayco.com/#website" },
         "about": { "@id": "https://buddymalleyplayco.com/#organization" },
-        "inLanguage": "en"
+        "inLanguage": "en",
+        "dateModified": "2026-11-23"
       },
       {
         "@type": "FAQPage",
@@ -111,35 +112,36 @@
     .bm-guide p, .bm-guide li { line-height: 1.55; color: #d5deea; }
     .bm-guide a { color: #f5c518; }
     .bm-guide .bm-eyebrow { font-weight: 800; letter-spacing: 0.12em; color: #e2ae04; }
-    .bm-guide-intro { display: block; }
-    .bm-guide-intro img {
-      display: block;
-      width: min(100%, 920px);
-      height: auto;
-      margin: 0 auto 1.5rem;
-      border-radius: 22px;
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
-    }
-    .bm-disclosure { margin: 0.8rem 0 0; padding: 0.85rem 1rem; border-radius: 14px; background: rgba(255,255,255,0.08); color: #d5deea; }
-    .bm-table-wrap { overflow-x: auto; margin: 1rem 0 0.6rem; }
-    .bm-compare { width: 100%; border-collapse: collapse; min-width: 760px; background: rgba(255,255,255,0.06); }
-    .bm-compare th, .bm-compare td { padding: 0.75rem 0.7rem; text-align: left; vertical-align: top; border-bottom: 1px solid rgba(255,255,255,0.14); }
-    .bm-compare th { font-family: Montserrat, Nunito, sans-serif; font-size: 0.82rem; letter-spacing: 0.03em; color: #fff; }
-    .bm-compare td { color: #d5deea; }
-    .bm-pending { font-weight: 800; color: #ffe08a; }
+    .bm-crumb ol { display: flex; flex-wrap: wrap; gap: 0.35rem 0; list-style: none; margin: 0 0 1rem; padding: 0; font-weight: 700; }
+    .bm-crumb li { display: inline-flex; align-items: center; }
+    .bm-crumb li:not(:last-child)::after { content: "/"; margin: 0 0.45rem; color: #9eb0c8; }
+    .bm-crumb [aria-current="page"] { color: #fff; }
+    .bm-dek { margin: 0 0 1rem; max-width: 40rem; color: #fff; font-size: 1.15rem; font-weight: 700; line-height: 1.4; }
+    .bm-guide-banner { display: block; width: min(100%, 920px); height: auto; margin: 0 auto 1.1rem; border-radius: 22px; box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28); }
+    .bm-byline { margin: 0 0 0.85rem; color: #d5deea; font-weight: 700; }
+    .bm-byline time { color: #fff; font-weight: 800; }
+    .bm-disclosure { margin: 0; padding: 0.85rem 1rem; border-radius: 14px; background: rgba(255,255,255,0.08); color: #d5deea; }
+    .bm-picks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 1rem 0 0; align-items: stretch; }
+    .bm-pick { display: flex; flex-direction: column; min-width: 0; padding: 0.7rem 0.7rem 0.9rem; border: 1px solid rgba(255,255,255,0.16); border-radius: 16px; background: rgba(255,255,255,0.08); }
+    .bm-pick-photo { display: flex; align-items: center; justify-content: center; height: 220px; margin: 0 0 0.75rem; overflow: hidden; border-radius: 14px; background: #fff; }
+    .bm-pick-photo img { width: 100%; height: 100%; object-fit: contain; }
+    .bm-guide .bm-pick-kicker { margin: 0 0 0.25rem; color: #f5c518; font-family: Montserrat, Nunito, sans-serif; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+    .bm-pick h3 { margin: 0 0 0.3rem; color: #fff; font-size: 1.15rem; line-height: 1.25; }
+    .bm-pick-name { margin: 0 0 0.45rem; color: #fff; font-weight: 800; }
+    .bm-pick p { margin: 0 0 0.55rem; }
+    .bm-pick-specs { margin: 0 0 0.7rem; padding-left: 1.1rem; }
+    .bm-pick-status { margin: 0 0 0.8rem; color: #e2b96d; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+    .bm-pick-foot { display: flex; flex-direction: column; margin-top: auto; }
     .bm-guide .btn { margin-top: 0.35rem; }
+    .bm-guide .bm-pick .btn { width: 100%; margin-top: 0; border-radius: 10px; text-transform: none; letter-spacing: 0; font-size: 1rem; }
     .bm-guide ol, .bm-guide ul { padding-left: 1.2rem; }
+    .bm-guide .bm-crumb ol { padding-left: 0; }
     .bm-guide details { margin: 0.55rem 0; padding: 0.7rem 0.9rem; border-radius: 14px; background: rgba(255,255,255,0.06); }
     .bm-guide summary { cursor: pointer; font-weight: 800; color: #fff; }
     .bm-guide details p { margin: 0.55rem 0 0; }
     @media (max-width: 760px) {
-      .bm-guide-intro img { width: 100%; }
-      .bm-compare { min-width: 0; }
-      .bm-compare thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-      .bm-compare, .bm-compare tbody, .bm-compare tr, .bm-compare td { display: block; width: 100%; }
-      .bm-compare tr { margin: 0 0 0.8rem; padding: 0.4rem 0.7rem 0.7rem; border: 1px solid rgba(255,255,255,0.16); border-radius: 14px; }
-      .bm-compare td { border: 0; padding: 0.45rem 0; }
-      .bm-compare td::before { content: attr(data-label); display: block; margin-bottom: 0.15rem; font-family: Montserrat, Nunito, sans-serif; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #fff; }
+      .bm-guide-banner { width: 100%; }
+      .bm-picks { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -179,66 +181,80 @@
   <main id="content">
     <article class="details page-details bm-guide">
       <div class="wrap">
-        <a class="back-link" href="toys-and-equipment.html"><span aria-hidden="true">&larr;</span> Toys &amp; Equipment</a>
-        <div class="bm-guide-intro">
-          <img src="Images/affiliate/small_apartment.png" width="1672" height="941" alt="Buddy and Malley play with indoor agility equipment in a small apartment, including cones, a tunnel, and weave poles.">
-          <div>
-            <p class="bm-eyebrow">Research-based recommendation</p>
-            <h1>Best Indoor Dog Exercise Equipment for Small Apartments</h1>
-            <p>When rain cuts the walk short and your dog is still waiting by the door, clear a little floor space and give them something to do. A few slow laps around cones or a quick game of find the kibble can turn a patch of living room into a rainy-day activity.</p>
-            <p>If you’re buying one thing, start with cones. You can set up a wide turn in whatever space you have and put everything away when you’re done. The short tunnel is an option for little dogs who like to explore. Weave poles take the most room: the full set spans 10 feet from the first pole to the last, plus space at both ends.</p>
-            <p class="bm-disclosure" id="affiliate-disclosure">The View on Chewy buttons are affiliate links. We may earn a commission from qualifying purchases made through those links, at no additional cost to you.</p>
-          </div>
+        <nav class="bm-crumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="toys-and-equipment.html">Toys &amp; Equipment</a></li>
+            <li aria-current="page">Indoor dog exercise</li>
+          </ol>
+        </nav>
+        <h1>Best Indoor Dog Exercise Equipment for Small Apartments</h1>
+        <p class="bm-dek">Keep your dog active without needing a big backyard.</p>
+        <img class="bm-guide-banner" src="Images/affiliate/small_apartment.png" width="1672" height="941" alt="Buddy and Malley play with indoor agility equipment in a small apartment, including cones, a tunnel, and weave poles.">
+        <p class="bm-byline">By Buddy &amp; Malley Play Co. · Last reviewed <time datetime="2026-11-23">November 23, 2026</time></p>
+        <p class="bm-disclosure" id="affiliate-disclosure">We may earn a commission from qualifying purchases made through links on this page.</p>
+
+        <h2 id="picks">Our Quick Recommendations</h2>
+        <p>These picks are researched from published product specs. Buddy and Malley haven’t tested them.</p>
+        <div class="bm-picks">
+          <article class="bm-pick" id="cones-pick">
+            <div class="bm-pick-photo">
+              <img src="Images/affiliate/cones.webp" width="300" height="300" alt="Stacked orange training cones with three yellow poles.">
+            </div>
+            <p class="bm-pick-kicker">For compact training areas</p>
+            <h3>Adjustable Cones and Training Poles</h3>
+            <p class="bm-pick-name">TRIXIE Dog Agility Hurdle Cone Set, Orange/Yellow</p>
+            <p>Flexible indoor exercise layouts with minimal storage requirements.</p>
+            <ul class="bm-pick-specs">
+              <li>Lowest bar setting: 2.5 inches.</li>
+              <li>Six cones and three poles come apart.</li>
+              <li>Small, medium, and large breeds. No published weight limit.</li>
+            </ul>
+            <div class="bm-pick-foot">
+              <p class="bm-pick-status">Researched</p>
+              <a class="btn gold" href="https://www.creator.anchor.store/a/QUAKg35dwh" target="_blank" rel="noopener noreferrer sponsored">Check Price at Chewy</a>
+            </div>
+          </article>
+          <article class="bm-pick" id="tunnel-pick">
+            <div class="bm-pick-photo">
+              <img src="Images/affiliate/tunnel.webp" width="300" height="300" alt="Blue collapsible dog agility tunnel with black straps.">
+            </div>
+            <p class="bm-pick-kicker">For playful indoor activities</p>
+            <h3>Collapsible Dog Agility Tunnel</h3>
+            <p class="bm-pick-name">TRIXIE Agility Dog Training Tunnel, 6.5-ft</p>
+            <p>An engaging obstacle that can be packed away when not in use.</p>
+            <ul class="bm-pick-specs">
+              <li>6.5 ft long, 15.7-in opening.</li>
+              <li>Folds into the included zippered bag.</li>
+              <li>Extra-small and small breeds. TRIXIE: small dogs and puppies.</li>
+            </ul>
+            <div class="bm-pick-foot">
+              <p class="bm-pick-status">Researched</p>
+              <a class="btn gold" href="https://www.creator.anchor.store/a/vRAewfha1r" target="_blank" rel="noopener noreferrer sponsored">Check Price at Chewy</a>
+            </div>
+          </article>
+          <article class="bm-pick" id="weaves-pick">
+            <div class="bm-pick-photo">
+              <img src="Images/affiliate/weave_Poles.webp" width="300" height="300" alt="White freestanding weave poles on blue bases.">
+            </div>
+            <p class="bm-pick-kicker">For coordination training</p>
+            <h3>Freestanding Weave Poles</h3>
+            <p class="bm-pick-name">Cool Runners Agility Dog Training Weave Poles</p>
+            <p>Suitable for indoor training when sufficient clear floor space is available.</p>
+            <ul class="bm-pick-specs">
+              <li>Six poles span 10 ft, first to last.</li>
+              <li>Packs into the included carrying case.</li>
+              <li>All breeds. No published weight limit on Chewy.</li>
+            </ul>
+            <div class="bm-pick-foot">
+              <p class="bm-pick-status">Researched</p>
+              <a class="btn gold" href="https://www.creator.anchor.store/a/rvjejaDaB6" target="_blank" rel="noopener noreferrer sponsored">Check Price at Chewy</a>
+            </div>
+          </article>
         </div>
 
-        <h2 id="compare">Compare three indoor setups</h2>
-        <p>We compared these picks using published product specs. Buddy and Malley haven’t tested them.</p>
-        <div class="bm-table-wrap">
-          <table class="bm-compare">
-            <caption class="visually-hidden">Comparison of the TRIXIE cone set, the TRIXIE 6.5-ft tunnel, and Cool Runners weave poles, with Chewy prices and the sizes published for each product.</caption>
-            <thead>
-              <tr>
-                <th scope="col">Product</th>
-                <th scope="col">Approximate price</th>
-                <th scope="col">Floor space required</th>
-                <th scope="col">Storage requirements</th>
-                <th scope="col">Suitable dog sizes</th>
-                <th scope="col">Best use</th>
-                <th scope="col">View on Chewy</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr id="cones">
-                <th scope="row">TRIXIE Dog Agility Hurdle Cone Set, Orange/Yellow</th>
-                <td data-label="Approximate price">About $26.99 on Chewy.</td>
-                <td data-label="Floor space required">Adjust the cone spacing to fit a wide walking path. The lowest bar setting is 2.5 inches.</td>
-                <td data-label="Storage requirements">Six cones and three poles come apart for storage.</td>
-                <td data-label="Suitable dog sizes">Chewy lists small, medium, and large breeds. No weight limit is published.</td>
-                <td data-label="Best use">Controlled walking paths and low step-overs.</td>
-                <td data-label="View on Chewy"><a class="btn gold" href="https://www.creator.anchor.store/a/QUAKg35dwh" target="_blank" rel="noopener noreferrer sponsored">View on Chewy</a></td>
-              </tr>
-              <tr id="tunnel">
-                <th scope="row">TRIXIE Agility Dog Training Tunnel, 6.5-ft</th>
-                <td data-label="Approximate price">About $26.99 on Chewy.</td>
-                <td data-label="Floor space required">About 6.5 ft long with a 15.7-in opening. Leave room for your dog to walk in and out at both ends.</td>
-                <td data-label="Storage requirements">Folds into the included zippered bag.</td>
-                <td data-label="Suitable dog sizes">Chewy lists extra-small and small breeds. TRIXIE says small dogs and puppies. No weight limit is published.</td>
-                <td data-label="Best use">Supervised exploration at a walking pace.</td>
-                <td data-label="View on Chewy"><a class="btn gold" href="https://www.creator.anchor.store/a/vRAewfha1r" target="_blank" rel="noopener noreferrer sponsored">View on Chewy</a></td>
-              </tr>
-              <tr id="weaves">
-                <th scope="row">Cool Runners Agility Dog Training Weave Poles</th>
-                <td data-label="Approximate price">About $71.99 on Chewy.</td>
-                <td data-label="Floor space required">The six-pole straight setup spans 10 ft between the first and last poles. Leave walking room at both ends.</td>
-                <td data-label="Storage requirements">Packs into the included carrying case.</td>
-                <td data-label="Suitable dog sizes">Chewy lists all breeds. No weight limit is published on the Chewy page.</td>
-                <td data-label="Best use">Slow, straight-line practice where the full setup fits.</td>
-                <td data-label="View on Chewy"><a class="btn gold" href="https://www.creator.anchor.store/a/rvjejaDaB6" target="_blank" rel="noopener noreferrer sponsored">View on Chewy</a></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p>Each View on Chewy button is an affiliate link to the product in that row.</p>
+        <p>When rain cuts the walk short and your dog is still waiting by the door, clear a little floor space and give them something to do. A few slow laps around cones or a quick game of find the kibble can turn a patch of living room into a rainy-day activity.</p>
+        <p>If you’re buying one thing, start with cones. You can set up a wide turn in whatever space you have and put everything away when you’re done. The short tunnel is an option for little dogs who like to explore. Weave poles take the most room: the full set spans 10 feet from the first pole to the last, plus space at both ends.</p>
 
         <h2>How to choose</h2>
         <h3>Available floor space</h3>
@@ -254,7 +270,7 @@
         <h3>Ease of setup</h3>
         <p>If setup takes longer than the session, it will not get used on a rainy weeknight. Favor pieces one person can place and remove without rearranging the whole room.</p>
         <h3>Budget</h3>
-        <p>Prices change. Compare the table with the ideas below before buying. Equipment is optional. The skills are not.</p>
+        <p>Prices change. Equipment is optional. The skills are not.</p>
 
         <h2>Five indoor exercises</h2>
         <p>Keep each session short. Reward calmly. Stop while the dog is still comfortable. None of these ask for high jumps, tight turns, or fast running.</p>
