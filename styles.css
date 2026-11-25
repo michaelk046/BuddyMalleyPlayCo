@@ -268,6 +268,10 @@ h1, h2, h3, .nav-links a, .btn, .shot-label, .legal button {
 .btn.gold:hover { background: var(--gold-deep); }
 .btn.yt { background: var(--yt); color: #fff; margin-top: 14px; }
 .btn.yt:hover { background: #d91818; }
+.btn.yt:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 3px;
+}
 .btn svg { width: 16px; height: 16px; }
 .btn:disabled { cursor: default; opacity: 0.75; }
 .btn:disabled:hover { transform: none; background: var(--yt); }
